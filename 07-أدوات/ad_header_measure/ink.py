@@ -5,7 +5,7 @@ def ink(box,pad=6):
     x0,y0,x1,y1=[int(round(v*Z)) for v in box]; x0-=pad*Z; x1+=pad*Z; y0=max(0,y0-pad*Z); y1+=pad*Z
     sub=a[y0:y1,x0:x1]>60; ys,xs=np.where(sub)
     return np.array([x0+xs.min(),y0+ys.min(),x0+xs.max()+1,y0+ys.max()+1])/Z
-L,N,T=ink(r['logo'],0),ink(r['name']),ink(r['tag'])
+L,N,T=ink(r["logo"],0),ink(r["name"],2),ink(r["tag"],2)
 print('logo',L.round(2)); print('name',N.round(2)); print('tag ',T.round(2))
 print('group x',round(min(L[0],N[0]),2),round(max(L[2],N[2]),2),'width',round(max(L[2],N[2])-min(L[0],N[0]),2))
 print('tag width',round(T[2]-T[0],2),'dx_left',round(T[0]-min(L[0],N[0]),2),'dx_right',round(T[2]-max(L[2],N[2]),2))

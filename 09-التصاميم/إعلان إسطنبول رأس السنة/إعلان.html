@@ -17,8 +17,8 @@
     --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
     --accent:var(--gold);   /* price colour */
     --img-y:-110px;
-    --lock-dx:-1.9px; --name-dy:11px; --tag-size:24.78px; --tag-dx:0.5px;   /* header fine-tuning */
-    --dots:#2F7A41;         /* perforation dots + currency (test: green) */          /* vertical position of the photo (1080 x 1620 after scaling) */
+    --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1080px;height:1350px;overflow:hidden;background:#07122b}
@@ -38,18 +38,18 @@
   .lockup{transform:translateX(var(--lock-dx))}
   .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
                 transform:translateY(var(--name-dy))}
-  /* tagline ink is matched to the ink width of logo + name (measured, see 07-أدوات/ad_header_measure) */
+  /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
   .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
-       white-space:nowrap;text-align:center;opacity:.92;transform:translateX(var(--tag-dx))}
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 
   .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
         text-shadow:0 2px 24px rgba(0,0,0,.25)}
   .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
   .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
   .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
-  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px;color:var(--dots)}
+  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
   .perf{margin-top:24px;width:440px;height:2px;
-        background-image:radial-gradient(circle,var(--dots) 1.4px,transparent 1.8px);
+        background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
         background-size:12px 2px;background-repeat:repeat-x}
 
   /* ---- footer ---- */
@@ -76,7 +76,7 @@
         <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
         <div class="name">سماء ديالى</div>
       </div>
-      <div class="tag" id="tag">الوكيل العام للخطوط الجوية العراقية</div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
     </div>
     <div class="dest">إسطنبول</div>
     <div class="price">
