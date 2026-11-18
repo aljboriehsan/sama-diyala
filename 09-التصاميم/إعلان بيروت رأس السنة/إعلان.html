@@ -14,9 +14,9 @@
 
   :root{
     --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
-    --ink:#0E4D2C;          /* single logo/text colour, chosen per background (pale sky -> green) */
+    --ink:#FFFFFF;          /* single logo/text colour, chosen per background (dark sky -> white) */
     --foot-ink:#FFFFFF;     /* footer sits on the dark sea */
-    --accent:#A8862F;       /* price colour: dark gold on a light background */
+    --accent:var(--gold);   /* price colour */
     --img-y:0px;
     --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
     /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
@@ -25,9 +25,9 @@
   html,body{width:1080px;height:1350px;overflow:hidden;background:#1c4a52}
   .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
   .photo{position:absolute;left:0;top:var(--img-y);width:1080px;height:1350px;
-         background:url("../../08-الصور/وجهات/بيروت - صخرة الروشة (مؤطرة للإعلان 1080x1350).jpg") 0 0/100% 100% no-repeat}
+         background:url("../../08-الصور/وجهات/بيروت - الروشة بالثلج والألعاب النارية (مؤطرة للإعلان 1080x1350).jpg") 0 0/100% 100% no-repeat}
   .shade-top{position:absolute;inset:0 0 auto 0;height:640px;
-             background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,rgba(255,255,255,.10) 55%,rgba(255,255,255,0) 100%)}
+             background:linear-gradient(180deg,rgba(20,16,48,.45) 0%,rgba(20,16,48,.22) 55%,rgba(20,16,48,0) 100%)}
   .shade-bot{position:absolute;inset:auto 0 0 0;height:260px;
              background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
 
@@ -44,13 +44,13 @@
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 
   .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
-        text-shadow:none}
+        text-shadow:0 2px 24px rgba(0,0,0,.25)}
   .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
   .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
   .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
   .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
   .perf{margin-top:24px;width:440px;height:2px;
-        background-image:radial-gradient(circle,rgba(168,134,47,.9) 1.2px,transparent 1.6px);
+        background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
         background-size:12px 2px;background-repeat:repeat-x}
 
   /* ---- footer ---- */
@@ -74,7 +74,7 @@
   <div class="head">
     <div class="brand" id="brand">
       <div class="lockup" id="lockup">
-        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
         <div class="name">سماء ديالى</div>
       </div>
       <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
