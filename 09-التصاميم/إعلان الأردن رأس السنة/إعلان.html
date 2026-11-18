@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>الأردن رأس السنة</title>
+<style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+  :root{
+    --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
+    --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
+    --accent:var(--gold);   /* price colour */
+    --img-y:0px;
+    --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden;background:#143877}
+  .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
+  .photo{position:absolute;left:0;top:var(--img-y);width:1080px;height:1350px;
+         background:url("../../08-الصور/وجهات/عمّان - معبد هرقل (مؤطرة للإعلان 1080x1350).jpg") 0 0/100% 100% no-repeat}
+  .shade-top{position:absolute;inset:0 0 auto 0;height:640px;
+             background:linear-gradient(180deg,rgba(4,10,28,.55) 0%,rgba(4,10,28,.28) 55%,rgba(4,10,28,0) 100%)}
+  .shade-bot{position:absolute;inset:auto 0 0 0;height:260px;
+             background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
+
+  /* ---- header ---- */
+  .head{position:absolute;top:58px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
+  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+
+  .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
+        text-shadow:0 2px 24px rgba(0,0,0,.25)}
+  .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
+  .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
+  .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
+  .airline{margin-top:10px;font-family:Plex;font-weight:500;font-size:22px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
+  .perf{margin-top:20px;width:440px;height:2px;
+        background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
+        background-size:12px 2px;background-repeat:repeat-x}
+
+  /* ---- footer ---- */
+  .foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;align-items:flex-end;justify-content:space-between}
+  .dur .from{font-family:Plex;font-weight:500;font-size:19px;opacity:.85;display:block;margin-bottom:2px}
+  .dur .val{font-family:Plex;font-weight:600;font-size:32px;line-height:1.2;white-space:nowrap}
+  .stripes{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px}
+  .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+  .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+  .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
+  .wa svg{width:28px;height:28px;flex:none}
+  .wa span{font-family:Plex;font-weight:500;font-size:25px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="shade-top"></div>
+  <div class="shade-bot"></div>
+
+  <div class="head">
+    <div class="brand" id="brand">
+      <div class="lockup" id="lockup">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
+        <div class="name">سماء ديالى</div>
+      </div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
+    </div>
+    <div class="dest">الأردن</div>
+    <div class="price">
+      <span class="from">ابتداءً من</span>
+      <span class="num">1,880,000</span>
+      <span class="cur">د.ع</span>
+    </div>
+    <div class="airline">على متن الملكية الأردنية</div>
+    <div class="perf"></div>
+  </div>
+
+  <div class="foot">
+    <div class="dur"><span class="from">ابتداءً من</span><span class="val">8 أيام / 7 ليالٍ</span></div>
+    <div class="wa">
+      <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+      <span>07700069900</span>
+    </div>
+  </div>
+  <div class="stripes"><i></i><i></i></div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+</body>
+</html>
