@@ -24,7 +24,7 @@
 
   /* photo: scaled to 0.75 (1500 x 1001), placed so the sign, staff and customer sit on the right */
   .photo{position:absolute;left:170px;top:-40px;width:1500px;height:1001px;
-         background:url("../../08-الصور/المكتب - الواجهة (القارمة معدّلة).jpg") 0 0/100% 100% no-repeat;
+         background:url("../../08-الصور/المكتب - الواجهة (معدّلة بلا مروحة).jpg") 0 0/100% 100% no-repeat;
          filter:contrast(1.04) saturate(1.06) brightness(1.02)}
   /* soft green fade from the panel into the photo */
   .fade{position:absolute;inset:0;
@@ -40,8 +40,12 @@
   /* text block — kept inside the band that desktop shows (y 150–774) */
   .content{position:absolute;left:40px;width:500px;top:0;height:924px;
            display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--white)}
-  .logo{width:420px;display:block}
-  .name{font-family:Naskh;font-weight:700;font-size:46px;line-height:1.35;margin-top:14px;letter-spacing:0}
+  /* our symbol first (right), a thin gold divider, then the Iraqi Airways bird, smaller */
+  .logos{display:flex;align-items:center;gap:26px}
+  .logo{width:226px;height:226px;display:block;margin:-18px -14px -22px}
+  .divider{width:2px;height:96px;background:rgba(201,164,76,.7);border-radius:2px}
+  .ia{width:138px;display:block}
+  .name{font-family:Naskh;font-weight:700;font-size:46px;line-height:1.35;margin-top:10px;letter-spacing:0}
   .badge{margin-top:22px;display:inline-flex;align-items:center;gap:10px;
          background:var(--gold);color:var(--green);border-radius:999px;padding:9px 24px 11px;
          font-family:Plex;font-weight:600;font-size:21px;line-height:1.3;white-space:nowrap}
@@ -49,9 +53,11 @@
   .services{margin-top:22px;font-family:Plex;font-weight:500;font-size:25px;line-height:1.4;color:var(--light);white-space:nowrap}
   .services .dot{color:var(--gold);margin:0 12px}
   .rule{width:300px;height:1px;background:rgba(201,164,76,.55);margin:22px 0 18px}
-  .contact{font-family:Plex;font-size:21px;line-height:1.6;color:var(--white);white-space:nowrap}
-  .contact b{font-weight:600;color:var(--gold);direction:ltr;unicode-bidi:isolate;letter-spacing:.5px}
-  .contact .addr{color:rgba(233,242,234,.85);font-size:19px}
+  .phone{font-family:Plex;font-weight:600;font-size:44px;line-height:1.15;color:var(--gold);
+         direction:ltr;letter-spacing:1.5px;white-space:nowrap}
+  .addr{margin-top:10px;display:inline-flex;align-items:center;gap:8px;
+        font-family:Plex;font-size:20px;line-height:1.5;color:rgba(233,242,234,.9);white-space:nowrap}
+  .addr svg{width:20px;height:20px;flex:none;color:var(--gold)}
 </style>
 </head>
 <body>
@@ -63,7 +69,11 @@
   <div class="stripe-gold"></div>
 
   <div class="content">
-    <img class="logo" src="../../01-الشعار/SVG/الأفقي - على الأخضر.svg" alt="">
+    <div class="logos">
+      <img class="logo" src="../../01-الشعار/SVG/الرمز - على الأخضر.svg" alt="">
+      <div class="divider"></div>
+      <img class="ia" src="../../06-مصادر-الشعار/العراقية/طائر العراقية - أبيض.png" alt="">
+    </div>
     <div class="name">سماء ديالى للسفر والسياحة</div>
     <div class="badge">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z"/></svg>
@@ -71,8 +81,11 @@
     </div>
     <div class="services">تذاكر الطيران<span class="dot">•</span>الفيزا<span class="dot">•</span>الرحلات السياحية</div>
     <div class="rule"></div>
-    <div class="contact">واتساب والحجز&nbsp; <b>07700069900</b></div>
-    <div class="contact addr">ديالى — بعقوبة، قرب كراج البحيرة</div>
+    <div class="phone">07700069900</div>
+    <div class="addr">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg>
+      ديالى — بعقوبة، قرب كراج البحيرة
+    </div>
   </div>
 </div>
 </body>
