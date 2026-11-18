@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>غلاف فيسبوك</title>
+<style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Naskh;font-weight:600;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-600-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E,U+2010-2011,U+204F,U+2E41}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E,U+2010-2011,U+204F,U+2E41}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E,U+2010-2011,U+204F,U+2E41}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F,U+2212}
+
+  :root{
+    --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --gold-dk:#A8862F; --light:#E9F2EA; --white:#FFFFFF;
+    /* the slanted edge: x at the top and at the bottom of the canvas */
+    --top:720px; --bot:560px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1640px;height:924px;overflow:hidden;background:var(--green)}
+  .cover{position:relative;width:1640px;height:924px;overflow:hidden;background:var(--green)}
+
+  /* photo: scaled to 0.75 (1500 x 1001), placed so the sign, staff and customer sit on the right */
+  .photo{position:absolute;left:170px;top:-40px;width:1500px;height:1001px;
+         background:url("../../08-الصور/المكتب - الواجهة (القارمة معدّلة).jpg") 0 0/100% 100% no-repeat;
+         filter:contrast(1.04) saturate(1.06) brightness(1.02)}
+  /* soft green fade from the panel into the photo */
+  .fade{position:absolute;inset:0;
+        background:linear-gradient(100deg, rgba(14,77,44,.55) 0, rgba(14,77,44,.18) 52%, rgba(14,77,44,0) 70%)}
+
+  .panel{position:absolute;inset:0;background:var(--green);
+         clip-path:polygon(0 0,var(--top) 0,var(--bot) 100%,0 100%)}
+  .stripe-gold{position:absolute;inset:0;background:var(--gold);
+         clip-path:polygon(calc(var(--top) + 0px) 0,calc(var(--top) + 16px) 0,calc(var(--bot) + 16px) 100%,calc(var(--bot) + 0px) 100%)}
+  .stripe-mid{position:absolute;inset:0;background:var(--mid);
+         clip-path:polygon(calc(var(--top) - 34px) 0,calc(var(--top) - 22px) 0,calc(var(--bot) - 22px) 100%,calc(var(--bot) - 34px) 100%)}
+
+  /* text block — kept inside the band that desktop shows (y 150–774) */
+  .content{position:absolute;left:40px;width:500px;top:0;height:924px;
+           display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--white)}
+  .logo{width:420px;display:block}
+  .name{font-family:Naskh;font-weight:700;font-size:46px;line-height:1.35;margin-top:14px;letter-spacing:0}
+  .badge{margin-top:22px;display:inline-flex;align-items:center;gap:10px;
+         background:var(--gold);color:var(--green);border-radius:999px;padding:9px 24px 11px;
+         font-family:Plex;font-weight:600;font-size:21px;line-height:1.3;white-space:nowrap}
+  .badge svg{width:22px;height:22px;flex:none}
+  .services{margin-top:22px;font-family:Plex;font-weight:500;font-size:25px;line-height:1.4;color:var(--light);white-space:nowrap}
+  .services .dot{color:var(--gold);margin:0 12px}
+  .rule{width:300px;height:1px;background:rgba(201,164,76,.55);margin:22px 0 18px}
+  .contact{font-family:Plex;font-size:21px;line-height:1.6;color:var(--white);white-space:nowrap}
+  .contact b{font-weight:600;color:var(--gold);direction:ltr;unicode-bidi:isolate;letter-spacing:.5px}
+  .contact .addr{color:rgba(233,242,234,.85);font-size:19px}
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="photo"></div>
+  <div class="fade"></div>
+  <div class="panel"></div>
+  <div class="stripe-mid"></div>
+  <div class="stripe-gold"></div>
+
+  <div class="content">
+    <img class="logo" src="../../01-الشعار/SVG/الأفقي - على الأخضر.svg" alt="">
+    <div class="name">سماء ديالى للسفر والسياحة</div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z"/></svg>
+      الوكيل العام للخطوط الجوية العراقية في ديالى
+    </div>
+    <div class="services">تذاكر الطيران<span class="dot">•</span>الفيزا<span class="dot">•</span>الرحلات السياحية</div>
+    <div class="rule"></div>
+    <div class="contact">واتساب والحجز&nbsp; <b>07700069900</b></div>
+    <div class="contact addr">ديالى — بعقوبة، قرب كراج البحيرة</div>
+  </div>
+</div>
+</body>
+</html>
