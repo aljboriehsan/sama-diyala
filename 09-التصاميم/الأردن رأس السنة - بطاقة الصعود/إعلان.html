@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>الأردن رأس السنة - بطاقة الصعود</title>
+<style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+  :root{--green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --gold-dk:#A8862F; --light:#E9F2EA; --white:#FFFFFF;
+        --muted:#6E8B77; --tint1:#CFE0D2; --tint2:#9FC2A6}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden;background:var(--light)}
+  .ad{position:relative;width:1080px;height:1350px;color:var(--green);font-family:Plex}
+
+  /* header */
+  .head{position:absolute;top:44px;left:56px;right:56px;height:80px;display:flex;align-items:center;justify-content:space-between}
+  .lockup{display:flex;align-items:center;gap:14px}
+  .lockup img{height:64px}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:42px;line-height:1;padding-top:14px;white-space:nowrap}
+  .badge{display:inline-flex;align-items:center;gap:10px;background:var(--white);border-radius:999px;padding:10px 22px 12px;
+         font-weight:500;font-size:21px;white-space:nowrap;box-shadow:0 1px 0 rgba(14,77,44,.06)}
+  .badge svg{width:22px;height:22px;color:var(--gold)}
+
+  /* boarding pass */
+  .card{position:absolute;left:40px;top:150px;width:1000px;height:1150px;background:var(--white);border-radius:30px;overflow:hidden;
+        box-shadow:0 18px 40px rgba(14,77,44,.10)}
+  .scene{position:absolute;inset:0 0 auto 0;height:500px}
+  .scene svg{display:block}
+  .pill{position:absolute;top:26px;right:28px;display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);
+        border-radius:999px;padding:7px 18px 9px;font-weight:500;font-size:19px}
+  .pill svg{width:18px;height:18px;color:var(--gold)}
+
+  .info{position:absolute;top:500px;left:56px;right:56px;height:380px}
+  .dest{position:absolute;right:0;top:6px;font-family:Naskh;font-weight:700;font-size:112px;line-height:1.1}
+  .via{position:absolute;right:4px;top:150px;font-weight:500;font-size:23px;color:var(--mid);white-space:nowrap}
+  .route{position:absolute;left:0;top:40px;display:flex;align-items:flex-start;gap:18px;direction:ltr}
+  .route .pt{text-align:center}
+  .route .code{font-weight:600;font-size:46px;letter-spacing:2px;line-height:1}
+  .route .city{font-size:19px;color:var(--muted);margin-top:6px;direction:rtl}
+  .route .arrow{margin-top:16px;width:150px;height:16px}
+
+  .fields{position:absolute;left:0;right:0;top:232px;display:grid;grid-template-columns:1.15fr 1.25fr 1fr 1.6fr;gap:22px;direction:rtl}
+  .f .k{font-size:18px;color:var(--muted);margin-bottom:6px}
+  .f .v{font-weight:600;font-size:23px;line-height:1.35}
+
+  .perf{position:absolute;left:0;right:0;top:900px;height:0}
+  .perf::before{content:"";position:absolute;left:48px;right:48px;top:-1px;border-top:2.5px dashed #C9D8CC}
+  .notch{position:absolute;top:-26px;width:52px;height:52px;border-radius:50%;background:var(--light)}
+  .notch.l{left:-26px} .notch.r{right:-26px}
+
+  .stub{position:absolute;left:0;right:0;bottom:0;height:226px;background:var(--green);color:var(--white)}
+  .price{position:absolute;right:56px;top:34px;display:flex;align-items:baseline;gap:14px;color:var(--gold)}
+  .price .from{font-weight:500;font-size:22px;color:var(--light);opacity:.9;align-self:center;padding-top:12px}
+  .price .num{font-weight:600;font-size:88px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-weight:500;font-size:28px;position:relative;top:-8px}
+  .wa{position:absolute;right:56px;bottom:30px;display:flex;align-items:center;gap:10px;direction:ltr;font-weight:500;font-size:24px;letter-spacing:1px}
+  .wa svg{width:26px;height:26px}
+  .barcode{position:absolute;left:56px;top:44px;width:250px;height:92px}
+  .code-s{position:absolute;left:56px;top:146px;font-weight:500;font-size:17px;letter-spacing:3px;color:var(--tint2);direction:ltr}
+  .stripes{position:absolute;left:56px;bottom:38px;display:flex;gap:7px}
+  .stripes i{display:block;width:40px;height:6px;transform:skewX(-35deg)}
+  .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--tint2)}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="head">
+    <div class="lockup">
+      <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
+      <div class="name">سماء ديالى</div>
+    </div>
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z"/></svg>
+      الوكيل العام للخطوط الجوية العراقية
+    </div>
+  </div>
+
+  <div class="card">
+    <!-- flat illustration: Petra Treasury by night of New Year (identity colours) -->
+    <div class="scene">
+      <svg viewBox="0 0 1000 500" width="1000" height="500">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DCEADF"/><stop offset="1" stop-color="#EEF5EF"/></linearGradient>
+          <g id="burst">
+            <g stroke="#C9A44C" stroke-width="3" stroke-linecap="round">
+              <line x1="0" y1="-14" x2="0" y2="-40"/><line x1="0" y1="14" x2="0" y2="40"/><line x1="-14" y1="0" x2="-40" y2="0"/><line x1="14" y1="0" x2="40" y2="0"/>
+              <line x1="10" y1="10" x2="28" y2="28"/><line x1="-10" y1="10" x2="-28" y2="28"/><line x1="10" y1="-10" x2="28" y2="-28"/><line x1="-10" y1="-10" x2="-28" y2="-28"/>
+            </g>
+            <g fill="#C9A44C"><circle cx="0" cy="-48" r="3.5"/><circle cx="0" cy="48" r="3.5"/><circle cx="-48" cy="0" r="3.5"/><circle cx="48" cy="0" r="3.5"/>
+              <circle cx="34" cy="34" r="3"/><circle cx="-34" cy="34" r="3"/><circle cx="34" cy="-34" r="3"/><circle cx="-34" cy="-34" r="3"/></g>
+          </g>
+        </defs>
+        <rect width="1000" height="500" fill="url(#sky)"/>
+        <!-- moon -->
+        <circle cx="716" cy="96" r="50" fill="#C9A44C"/>
+        <!-- New Year fireworks -->
+        <use href="#burst" transform="translate(255,92) scale(1.05)"/>
+        <use href="#burst" transform="translate(372,48) scale(.62)"/>
+        <use href="#burst" transform="translate(640,70) scale(.72)"/>
+        <!-- rock face the Treasury is carved into -->
+        <path d="M205 132 L262 104 L318 118 L380 92 L452 110 L520 88 L600 106 L668 94 L736 120 L795 112 L795 420 L205 420 Z" fill="#9FC2A6"/>
+        <path d="M232 190 L300 170 L330 210 L290 260 L240 250 Z M700 180 L760 200 L770 270 L720 250 Z" fill="#B8D3BD"/>
+        <!-- canyon walls (the Siq) -->
+        <path d="M0 0 L176 0 L196 70 L168 126 L202 190 L182 262 L222 322 L204 382 L238 420 L0 420 Z" fill="#2F7A41"/>
+        <path d="M0 0 L112 0 L130 84 L104 150 L136 232 L114 318 L146 420 L0 420 Z" fill="#0E4D2C"/>
+        <path d="M1000 0 L824 0 L804 70 L832 126 L798 190 L818 262 L778 322 L796 382 L762 420 L1000 420 Z" fill="#2F7A41"/>
+        <path d="M1000 0 L888 0 L870 84 L896 150 L864 232 L886 318 L854 420 L1000 420 Z" fill="#0E4D2C"/>
+
+        <!-- the Treasury (Al-Khazneh) -->
+        <g fill="#0E4D2C">
+          <!-- lower storey -->
+          <rect x="322" y="402" width="356" height="16"/>
+          <rect x="334" y="290" width="332" height="22"/>
+          <polygon points="398,290 500,248 602,290"/>
+          <rect x="346" y="312" width="22" height="90"/><rect x="394" y="312" width="22" height="90"/><rect x="442" y="312" width="22" height="90"/>
+          <rect x="536" y="312" width="22" height="90"/><rect x="584" y="312" width="22" height="90"/><rect x="632" y="312" width="22" height="90"/>
+          <rect x="336" y="312" width="330" height="6"/>
+          <!-- upper storey -->
+          <rect x="340" y="238" width="320" height="12"/>
+          <rect x="344" y="160" width="96" height="10"/><rect x="560" y="160" width="96" height="10"/>
+          <polygon points="340,160 420,128 420,160"/><polygon points="660,160 580,128 580,160"/>
+          <rect x="352" y="170" width="14" height="68"/><rect x="414" y="170" width="14" height="68"/>
+          <rect x="572" y="170" width="14" height="68"/><rect x="634" y="170" width="14" height="68"/>
+          <!-- tholos -->
+          <rect x="462" y="150" width="76" height="10"/>
+          <rect x="468" y="160" width="12" height="78"/><rect x="520" y="160" width="12" height="78"/><rect x="490" y="160" width="20" height="78"/>
+          <polygon points="456,150 500,116 544,150"/>
+          <rect x="494" y="98" width="12" height="20"/><circle cx="500" cy="94" r="9"/>
+        </g>
+        <!-- recesses between columns -->
+        <g fill="#2F7A41">
+          <rect x="368" y="318" width="26" height="84"/><rect x="416" y="318" width="26" height="84"/>
+          <rect x="558" y="318" width="26" height="84"/><rect x="606" y="318" width="26" height="84"/>
+          <rect x="366" y="170" width="48" height="68"/><rect x="586" y="170" width="48" height="68"/>
+          <rect x="440" y="170" width="22" height="68"/><rect x="538" y="170" width="22" height="68"/>
+          <polygon points="420,284 500,252 580,284"/>
+        </g>
+        <!-- glowing doorway -->
+        <rect x="464" y="318" width="72" height="84" fill="#0E4D2C"/>
+        <rect x="480" y="334" width="40" height="68" rx="2" fill="#C9A44C"/>
+
+        <!-- ground and candles (Petra by Night) -->
+        <rect x="0" y="418" width="1000" height="82" fill="#0E4D2C"/>
+        <g fill="#C9A44C">
+          <circle cx="250" cy="430" r="3"/><circle cx="300" cy="428" r="3"/><circle cx="350" cy="430" r="3"/><circle cx="400" cy="428" r="3"/><circle cx="450" cy="430" r="3"/>
+          <circle cx="550" cy="430" r="3"/><circle cx="600" cy="428" r="3"/><circle cx="650" cy="430" r="3"/><circle cx="700" cy="428" r="3"/><circle cx="750" cy="430" r="3"/>
+          <circle cx="210" cy="446" r="4"/><circle cx="275" cy="444" r="4"/><circle cx="340" cy="446" r="4"/><circle cx="405" cy="444" r="4"/><circle cx="470" cy="446" r="4"/>
+          <circle cx="530" cy="446" r="4"/><circle cx="595" cy="444" r="4"/><circle cx="660" cy="446" r="4"/><circle cx="725" cy="444" r="4"/><circle cx="790" cy="446" r="4"/>
+          <circle cx="160" cy="464" r="5"/><circle cx="245" cy="462" r="5"/><circle cx="330" cy="464" r="5"/><circle cx="415" cy="462" r="5"/><circle cx="500" cy="464" r="5"/>
+          <circle cx="585" cy="462" r="5"/><circle cx="670" cy="464" r="5"/><circle cx="755" cy="462" r="5"/><circle cx="840" cy="464" r="5"/>
+        </g>
+        <!-- slanted cut with the two identity stripes -->
+        <polygon points="0,486 1000,420 1000,432 0,498" fill="#2F7A41"/>
+        <polygon points="0,498 1000,432 1000,442 0,508" fill="#C9A44C"/>
+        <polygon points="0,508 1000,442 1000,500 0,500" fill="#FFFFFF"/>
+      </svg>
+      <div class="pill">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z"/></svg>
+        بطاقة صعود
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="dest">الأردن</div>
+      <div class="via">عمّان · البتراء · وادي رم · العقبة</div>
+      <div class="route">
+        <div class="pt"><div class="code">AMM</div><div class="city">عمّان</div></div>
+        <svg class="arrow" viewBox="0 0 150 16"><line x1="22" y1="8" x2="148" y2="8" stroke="#C9A44C" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/><path d="M2 8 L20 1 L16 8 L20 15 Z" fill="#C9A44C"/></svg>
+        <div class="pt"><div class="code">BGW</div><div class="city">بغداد</div></div>
+      </div>
+      <div class="fields">
+        <div class="f"><div class="k">المدة</div><div class="v">8 أيام / 7 ليالٍ</div></div>
+        <div class="f"><div class="k">الانطلاق</div><div class="v">26 أو 28 كانون الأول</div></div>
+        <div class="f"><div class="k">الطيران</div><div class="v">الملكية الأردنية</div></div>
+        <div class="f"><div class="k">يشمل</div><div class="v">طيران، فنادق مع الفطور، دخول البتراء ووادي رم</div></div>
+      </div>
+    </div>
+
+    <div class="perf"><div class="notch r"></div><div class="notch l"></div></div>
+
+    <div class="stub">
+      <div class="price"><span class="from">ابتداءً من</span><span class="num">1,880,000</span><span class="cur">د.ع</span></div>
+      <div class="wa">
+        <svg viewBox="0 0 32 32" fill="#C9A44C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+        <span>07700069900</span>
+      </div>
+      <svg class="barcode" viewBox="0 0 250 92" id="bc"></svg>
+      <div class="code-s">BGW · AMM · 2027</div>
+    </div>
+  </div>
+</div>
+<script>
+  // decorative barcode
+  (function(){const s=document.getElementById('bc');let x=0,i=0;const w=[3,1,2,1,4,1,1,3,2,1,1,2,3,1,2,2,1,4,1,1,2,3,1,1,3,2,1,2,1,3,1,1,2,4,1,2,1,1,3,1,2,2,1,3,1,2,1,1];
+   while(x<250){const bw=w[i%w.length]*2;if(i%2===0){const r=document.createElementNS('http://www.w3.org/2000/svg','rect');r.setAttribute('x',x);r.setAttribute('y',0);r.setAttribute('width',bw);r.setAttribute('height',92);r.setAttribute('fill','#E9F2EA');s.appendChild(r);}x+=bw;i++;}})();
+  document.fonts.ready.then(()=>{document.body.dataset.ready='1'});
+</script>
+</body>
+</html>
