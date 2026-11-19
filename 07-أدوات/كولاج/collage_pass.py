@@ -1,9 +1,11 @@
 # Builds the 3-photo slanted collage for a boarding-pass ad (as in the Jordan ad).
-# Usage: python3 collage_pass.py <ad html> <out dir for parts> <config.json>
+# Usage: python3 collage_pass.py <ad html> <out dir for parts> <config.json> [canvas height=1350] [top edge y at left=600]
 # config: {"sky":[src, y0, y1], "panels":[[src, cx, y0, y1] x3 left->right]}  (fractions of the source)
 import sys,json,re,os
 from PIL import Image,ImageEnhance
 html,outd,cfg=sys.argv[1],sys.argv[2],json.load(open(sys.argv[3]))
+CH=int(sys.argv[4]) if len(sys.argv)>4 else 1350
+TY=int(sys.argv[5]) if len(sys.argv)>5 else 600
 os.makedirs(outd,exist_ok=True)
 def crop(src,cx,y0,y1,size=(460,1000)):
     im=Image.open(src).convert('RGB'); W,H=im.size
@@ -22,18 +24,18 @@ s=re.sub(r'\.photo\{[^}]*\}',f'.photo{{position:absolute;left:0;top:0;width:1080
 if '.collage{' not in s:
     s=re.sub(r'\.shade-top\{[^}]*\}','.shade-top{position:absolute;inset:0 0 auto 0;height:640px;\n             background:linear-gradient(180deg,rgba(6,24,44,.50) 0%,rgba(6,24,44,.38) 60%,rgba(6,24,44,.10) 100%)}\n  .collage{position:absolute;inset:0;display:block}',s,count=1,flags=re.S)
 s=re.sub(r'\s*<svg class="collage".*?</svg>\n','\n',s,flags=re.S)
-def y(x,y0=600,dy=60): return y0-dy*x/1080
+def y(x,y0=TY,dy=60): return y0-dy*x/1080
 L,M1,M2,R=(367,337),(377,347),(733,703),(743,713)
-svg=f'''  <svg class="collage" viewBox="0 0 1080 1350" width="1080" height="1350">
+svg=f'''  <svg class="collage" viewBox="0 0 1080 {CH}" width="1080" height="{CH}">
     <defs>
-      <clipPath id="cA"><polygon points="0,{y(0)} {L[0]},{y(L[0])} {L[1]},1350 0,1350"/></clipPath>
-      <clipPath id="cB"><polygon points="{M1[0]},{y(M1[0])} {M2[0]},{y(M2[0])} {M2[1]},1350 {M1[1]},1350"/></clipPath>
-      <clipPath id="cC"><polygon points="{R[0]},{y(R[0])} 1080,{y(1080)} 1080,1350 {R[1]},1350"/></clipPath>
+      <clipPath id="cA"><polygon points="0,{y(0)} {L[0]},{y(L[0])} {L[1]},{CH} 0,{CH}"/></clipPath>
+      <clipPath id="cB"><polygon points="{M1[0]},{y(M1[0])} {M2[0]},{y(M2[0])} {M2[1]},{CH} {M1[1]},{CH}"/></clipPath>
+      <clipPath id="cC"><polygon points="{R[0]},{y(R[0])} 1080,{y(1080)} 1080,{CH} {R[1]},{CH}"/></clipPath>
     </defs>
-    <polygon points="0,{y(0)} 1080,{y(1080)} 1080,1350 0,1350" fill="#C9A44C"/>
-    <image href="{rel}p1.jpg" x="-10" y="{y(0)-60}" width="392" height="{1350-y(0)+60}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cA)"/>
-    <image href="{rel}p2.jpg" x="330" y="{y(377)-20}" width="420" height="{1350-y(377)+20}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cB)"/>
-    <image href="{rel}p3.jpg" x="700" y="{y(743)-30}" width="390" height="{1350-y(743)+30}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cC)"/>
+    <polygon points="0,{y(0)} 1080,{y(1080)} 1080,{CH} 0,{CH}" fill="#C9A44C"/>
+    <image href="{rel}p1.jpg" x="-10" y="{y(0)-60}" width="392" height="{CH-y(0)+60}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cA)"/>
+    <image href="{rel}p2.jpg" x="330" y="{y(377)-20}" width="420" height="{CH-y(377)+20}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cB)"/>
+    <image href="{rel}p3.jpg" x="700" y="{y(743)-30}" width="390" height="{CH-y(743)+30}" preserveAspectRatio="xMidYMin slice" clip-path="url(#cC)"/>
     <polygon points="0,{y(0)-18} 1080,{y(1080)-18} 1080,{y(1080)-10} 0,{y(0)-10}" fill="#2F7A41"/>
     <polygon points="0,{y(0)-10} 1080,{y(1080)-10} 1080,{y(1080)-4} 0,{y(0)-4}" fill="#C9A44C"/>
   </svg>
