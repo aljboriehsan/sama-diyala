@@ -53,7 +53,7 @@
   .kicker{width:max-content;transform:translateX(var(--kick-dx,194px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
   .kicker + .dest{margin-top:10px}
   /* boarding pass at the bottom */
-  .pass{position:absolute;left:56px;right:56px;bottom:330px;height:226px;display:flex;direction:rtl;
+  .pass{position:absolute;left:56px;right:56px;bottom:452px;height:226px;display:flex;direction:rtl;
         filter:none}
   .pass .main{flex:1;background:rgba(255,255,255,.66);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(14px);border-radius:0 22px 22px 0;padding:24px 34px 22px;color:var(--green);position:relative;border-left:2.5px dashed #BFD2C4;
      -webkit-mask:radial-gradient(circle at 0 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
@@ -78,6 +78,13 @@
   .stubx .k{font-family:Plex;font-size:16px;color:#9FC2A6;margin-bottom:10px}
   .stubx ul{list-style:none;font-family:Plex;font-weight:500;font-size:19px;line-height:1.55}
   .stubx li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:10px;vertical-align:middle}
+  .wabtn{position:absolute;left:260px;bottom:278px;box-sizing:border-box;width:560px;height:140px;border-radius:70px;background:#0E4D2C;
+         border:3px solid #C9A44C;display:flex;align-items:center;justify-content:center;gap:22px;color:#fff;font-family:Plex}
+  .wabtn .ic{width:78px;height:78px;border-radius:50%;background:#C9A44C;display:flex;align-items:center;justify-content:center}
+  .wabtn .ic svg{width:48px;height:48px}
+  .wabtn b{font-weight:600;font-size:40px;padding-bottom:4px}
+  .ph3{position:absolute;left:0;right:0;bottom:228px;text-align:center;font-family:Plex;font-size:22px;color:rgba(255,255,255,.85)}
+  .ph3 span{direction:ltr;unicode-bidi:isolate;font-weight:600;color:#fff;word-spacing:-3px;letter-spacing:1px}
   .perf{margin-top:20px;width:440px;height:2px;
         background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
         background-size:12px 2px;background-repeat:repeat-x}
@@ -86,7 +93,7 @@
   .foot{position:absolute;left:56px;right:56px;bottom:268px;display:flex;align-items:flex-end;justify-content:space-between}
   .dur .from{font-family:Plex;font-weight:500;font-size:19px;opacity:.85;display:block;margin-bottom:2px}
   .dur .val{font-family:Plex;font-weight:600;font-size:32px;line-height:1.2;white-space:nowrap}
-  .stripes{position:absolute;left:50%;bottom:236px;transform:translateX(-50%);display:flex;gap:7px}
+  .stripes{position:absolute;left:50%;bottom:196px;transform:translateX(-50%);display:flex;gap:7px}
   .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
   .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
   .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
@@ -118,14 +125,6 @@
     </div>
     <div class="perf"></div>
   </div>
-
-  <div class="foot">
-    <div class="dur"></div>
-    <div class="wa">
-      <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
-      <span class="ph">077 0006 9900</span>
-    </div>
-  </div>
   <div class="pass">
     <div class="main">
       <div class="row1">
@@ -147,6 +146,11 @@
       <ul><li>طيران ذهاب وعودة</li><li>فندق مع الفطور</li><li>استقبال وتوديع</li><li>منطقة توب كابي</li></ul>
     </div>
   </div>
+  <div class="wabtn">
+    <div class="ic"><svg viewBox="0 0 32 32" fill="#0E4D2C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></div>
+    <b>راسلنا على واتساب</b>
+  </div>
+  <div class="ph3">أو اتصل: <span>077 0006 9900</span></div>
   <div class="stripes"><i></i><i></i></div>
 </div>
 <script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
