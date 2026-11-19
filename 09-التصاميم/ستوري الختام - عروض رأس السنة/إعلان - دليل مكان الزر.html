@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>ستوري الختام - إسطنبول رأس السنة - نظيف مع بطاقة صعود</title>
+<style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+  :root{
+    --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
+    --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
+    --accent:var(--gold);   /* price colour */
+    --img-y:-150px;
+    --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1920px;overflow:hidden;background:#07122b}
+  .ad{position:relative;width:1080px;height:1920px;overflow:hidden;color:var(--ink)}
+  .photo{position:absolute;left:0;top:0;width:1080px;height:840px;background:url("../../08-الصور/وجهات/إسطنبول رأس السنة - كولاج (أجزاء)/sky.jpg") center top/cover no-repeat}
+  .shade-top{position:absolute;inset:0 0 auto 0;height:820px;
+             background:linear-gradient(180deg,rgba(6,24,44,.50) 0%,rgba(6,24,44,.38) 60%,rgba(6,24,44,.10) 100%)}
+  .collage{position:absolute;inset:0;display:block}
+  .shade-bot{position:absolute;inset:auto 0 0 0;height:520px;
+             background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
+
+  /* ---- header ---- */
+  .head{position:absolute;top:230px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
+  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+
+  .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
+        text-shadow:0 2px 24px rgba(0,0,0,.25)}
+  .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
+  .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
+  .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
+  .airline{margin-top:10px;font-family:Plex;font-weight:500;font-size:22px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,0px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker + .dest{margin-top:10px}
+  /* boarding pass at the bottom */
+  .pass{position:absolute;left:56px;right:56px;bottom:330px;height:226px;display:flex;direction:rtl;
+        filter:none}
+  .pass .main{flex:1;background:rgba(255,255,255,.66);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px);border-radius:0 22px 22px 0;padding:24px 34px 22px;color:var(--green);position:relative;border-left:2.5px dashed #BFD2C4;
+     -webkit-mask:radial-gradient(circle at 0 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+  .pass .stubx{width:300px;background:rgba(14,77,44,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:22px 0 0 22px;padding:24px 28px;color:#FFFFFF;position:relative;
+     -webkit-mask:radial-gradient(circle at 100% 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+  .pass .cut{width:0;position:relative;border-right:2.5px dashed #BFD2C4;background:#fff}
+  .pass .cut::before,.pass .cut::after{content:"";position:absolute;right:-17px;width:32px;height:32px;border-radius:50%;background:#2a2a35}
+  .pass .cut::before{top:-16px} .pass .cut::after{bottom:-16px}
+  .row1{display:flex;align-items:center;justify-content:space-between}
+  .bplogo{height:58px;display:block}
+  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:Plex;font-weight:500;font-size:18px}
+  .bp svg{width:17px;height:17px;color:var(--gold)}
+  .route{display:flex;align-items:flex-start;gap:16px;direction:ltr}
+  .route .code{font-family:Plex;font-weight:600;font-size:38px;letter-spacing:2px;line-height:1}
+  .route .city{font-family:Plex;font-size:16px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
+  .route svg{margin-top:13px;width:120px;height:14px}
+  .fields{margin-top:26px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px}
+  .f .k{font-family:Plex;font-size:16px;color:#6E8B77;margin-bottom:4px}
+  .f .v .fr{display:block;font-weight:500;font-size:15px;color:#6E8B77;line-height:1.2;margin-bottom:2px}
+  .f .v .sub{display:block;font-weight:500;font-size:18px;color:#3E6B4C}
+  .f .v{font-family:Plex;font-weight:600;font-size:22px;line-height:1.3;white-space:nowrap}
+  .stubx .k{font-family:Plex;font-size:16px;color:#9FC2A6;margin-bottom:10px}
+  .stubx ul{list-style:none;font-family:Plex;font-weight:500;font-size:19px;line-height:1.55}
+  .stubx li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:10px;vertical-align:middle}
+  .lbl{position:absolute;transform:translateX(-50%);font-family:Naskh;font-weight:700;font-size:42px;color:#fff;
+       text-shadow:0 2px 14px rgba(0,0,0,.55);white-space:nowrap}
+  .cta{position:absolute;left:96px;right:96px;bottom:262px;height:360px;border-radius:28px;text-align:center;
+       background:rgba(255,255,255,.66);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px);color:var(--green);padding-top:30px}
+  .cta .t1{font-family:Naskh;font-weight:700;font-size:50px;line-height:1.2}
+  .cta .t2{font-family:Plex;font-weight:500;font-size:24px;color:#3E6B4C;margin-top:4px}
+  .cta .slot{margin:16px auto 0;width:560px;height:140px;border-radius:22px}
+  body.guide .cta .slot{outline:3px dashed #2F7A41;outline-offset:0;background:rgba(14,77,44,.06)}
+  .cta .ph2{position:absolute;left:0;right:0;bottom:22px;font-family:Plex;font-size:21px;color:#3E6B4C}
+  .cta .ph2 span{direction:ltr;unicode-bidi:isolate;font-weight:600;color:var(--green);word-spacing:-3px;letter-spacing:1px}
+  .sub2{margin-top:6px;font-family:Plex;font-weight:500;font-size:30px;color:#fff;opacity:.95}
+  .perf{margin-top:20px;width:440px;height:2px;
+        background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
+        background-size:12px 2px;background-repeat:repeat-x}
+
+  /* ---- footer ---- */
+  .foot{position:absolute;left:56px;right:56px;bottom:268px;display:flex;align-items:flex-end;justify-content:space-between}
+  .dur .from{font-family:Plex;font-weight:500;font-size:19px;opacity:.85;display:block;margin-bottom:2px}
+  .dur .val{font-family:Plex;font-weight:600;font-size:32px;line-height:1.2;white-space:nowrap}
+  .stripes{position:absolute;left:50%;bottom:200px;transform:translateX(-50%);display:flex;gap:7px}
+  .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+  .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+  .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
+  .wa .ph{word-spacing:-3px}
+  .wa svg{width:28px;height:28px;flex:none}
+  .wa span{font-family:Plex;font-weight:500;font-size:25px;letter-spacing:1px}
+</style>
+</head>
+<body class="guide">
+<div class="ad">
+  <div class="photo"></div>
+  <div class="shade-top"></div>
+  <svg class="collage" viewBox="0 0 1080 1920" width="1080" height="1920">
+    <defs><clipPath id="off"><polygon points="0,772.0 1080,712.0 1080,1920 0,1920"/></clipPath></defs>
+    <image href="../../08-الصور/المكتب - الواجهة (نهائية بإضاءة سينمائية).jpg" x="-1557" y="162" width="2637" height="1760" preserveAspectRatio="none" clip-path="url(#off)"/>
+    <polygon points="0,754.0 1080,694.0 1080,702.0 0,762.0" fill="#2F7A41"/>
+    <polygon points="0,762.0 1080,702.0 1080,708.0 0,768.0" fill="#C9A44C"/>
+  </svg>
+  <div class="shade-bot"></div>
+
+  <div class="head">
+    <div class="brand" id="brand">
+      <div class="lockup" id="lockup">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
+        <div class="name">سماء ديالى</div>
+      </div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
+    </div>
+    <div class="kicker">عروض رأس السنة</div>
+    <div class="dest">احجز مقعدك</div>
+    <div class="sub2">من الوكيل العام في بعقوبة</div>
+    <div class="perf"></div>
+  </div>
+  <div class="cta">
+    <div class="t1">للاستفسار والحجز</div>
+    <div class="t2">اضغط على زر الواتساب</div>
+    <div class="slot"></div>
+    <div class="ph2">أو اتصل: <span>077 0006 9900</span></div>
+  </div>
+  <div class="stripes"><i></i><i></i></div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+</body>
+</html>
