@@ -23,10 +23,10 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1080px;height:1350px;overflow:hidden;background:#1f5f9e}
   .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
-  .photo{position:absolute;left:0;top:var(--img-y);width:1080px;height:1350px;
-         background:url("../../08-الصور/وجهات/ماليزيا - كوالالمبور (مؤطرة لنسخة بطاقة الصعود).jpg") 0 0/100% 100% no-repeat}
+  .photo{position:absolute;left:0;top:0;width:1080px;height:864px;background:url("../../08-الصور/وجهات/ماليزيا رأس السنة - كولاج (أجزاء)/sky.jpg") 0 0/1080px 864px no-repeat}
   .shade-top{position:absolute;inset:0 0 auto 0;height:640px;
-             background:linear-gradient(180deg,rgba(4,10,28,.55) 0%,rgba(4,10,28,.28) 55%,rgba(4,10,28,0) 100%)}
+             background:linear-gradient(180deg,rgba(6,24,44,.50) 0%,rgba(6,24,44,.38) 60%,rgba(6,24,44,.10) 100%)}
+  .collage{position:absolute;inset:0;display:block}
   .shade-bot{position:absolute;inset:auto 0 0 0;height:520px;
              background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
 
@@ -50,7 +50,7 @@
   .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
   .airline{margin-top:10px;font-family:Plex;font-weight:500;font-size:22px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
-  .kicker{width:max-content;transform:translateX(var(--kick-dx,212.02px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,211.77px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
   .kicker + .dest{margin-top:10px}
   /* boarding pass at the bottom */
   .pass{position:absolute;left:56px;right:56px;bottom:108px;height:226px;display:flex;direction:rtl;
@@ -98,6 +98,19 @@
 <div class="ad">
   <div class="photo"></div>
   <div class="shade-top"></div>
+  <svg class="collage" viewBox="0 0 1080 1350" width="1080" height="1350">
+    <defs>
+      <clipPath id="cA"><polygon points="0,600.0 367,579.6111111111111 337,1350 0,1350"/></clipPath>
+      <clipPath id="cB"><polygon points="377,579.0555555555555 733,559.2777777777778 703,1350 347,1350"/></clipPath>
+      <clipPath id="cC"><polygon points="743,558.7222222222222 1080,540.0 1080,1350 713,1350"/></clipPath>
+    </defs>
+    <polygon points="0,600.0 1080,540.0 1080,1350 0,1350" fill="#C9A44C"/>
+    <image href="../../08-الصور/وجهات/ماليزيا رأس السنة - كولاج (أجزاء)/p1.jpg" x="-10" y="540.0" width="392" height="810.0" preserveAspectRatio="xMidYMin slice" clip-path="url(#cA)"/>
+    <image href="../../08-الصور/وجهات/ماليزيا رأس السنة - كولاج (أجزاء)/p2.jpg" x="330" y="559.0555555555555" width="420" height="790.9444444444445" preserveAspectRatio="xMidYMin slice" clip-path="url(#cB)"/>
+    <image href="../../08-الصور/وجهات/ماليزيا رأس السنة - كولاج (أجزاء)/p3.jpg" x="700" y="528.7222222222222" width="390" height="821.2777777777778" preserveAspectRatio="xMidYMin slice" clip-path="url(#cC)"/>
+    <polygon points="0,582.0 1080,522.0 1080,530.0 0,590.0" fill="#2F7A41"/>
+    <polygon points="0,590.0 1080,530.0 1080,536.0 0,596.0" fill="#C9A44C"/>
+  </svg>
   <div class="shade-bot"></div>
 
   <div class="head">
