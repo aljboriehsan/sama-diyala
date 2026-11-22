@@ -2,7 +2,7 @@
  "music": "../موسيقى/bfcmusic-christmas-party-time-249613.mp3",
  "music_offset": 59.391,
  "logo": "عناصر/الشعار المصغر.png",
- "logo_y": 150,
+ "logo_y": 160,
  "end_card": "عناصر/الختام.png",
  "end_card_dur": 4.4032,
  "labels": {},
@@ -111,5 +111,13 @@
   }
  ],
  "out": "ريل إسطنبول رأس السنة.mp4",
- "music_fade_out": 0.5
+ "music_fade_out": 0.5,
+ "overlays": [
+  {
+   "img": "عناصر/الافتتاح.png",
+   "start": 0,
+   "end": 5.149,
+   "fade_out": 0.3
+  }
+ ]
 }

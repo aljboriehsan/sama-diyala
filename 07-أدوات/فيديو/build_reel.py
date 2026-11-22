@@ -54,6 +54,12 @@ for j, (lab, a, b) in enumerate(groups):
     ii = add_input(cfg["labels"][lab])
     chain.append(f"[{ii}:v]format=rgba,fade=t=in:st={a}:d=0.2:alpha=1,fade=t=out:st={b-0.2}:d=0.2:alpha=1[lb{j}]")
     chain.append(f"[{last}][lb{j}]overlay=x=0:y={H-cfg.get('label_bottom',560)}:enable='between(t,{a},{b})'[o{j+1}]"); last = f"o{j+1}"
+# timed full-frame overlays: [{img, start, end, fade_out?}]
+for j, ov in enumerate(cfg.get("overlays", [])):
+    oi = add_input(ov["img"])
+    ofo = ov.get("fade_out", 0.3)
+    chain.append(f"[{oi}:v]format=rgba,fade=t=out:st={ov['end']-ofo}:d={ofo}:alpha=1[ov{j}]")
+    chain.append(f"[{last}][ov{j}]overlay=0:0:enable='between(t,{ov['start']},{ov['end']})'[ovo{j}]"); last = f"ovo{j}"
 # end card
 ei = add_input(cfg["end_card"])
 chain.append(f"[{ei}:v]format=rgba,fade=t=in:st={t_end+0.1}:d=0.45:alpha=1[ec]")
