@@ -26,7 +26,7 @@ for i, s in enumerate(segs):
     cum += s["dur"]
     z = s.get("zoom", 0.05)
     pre = ""
-    if stab:   # two-pass vid.stab on the exact source window
+    if stab and s.get("stab", True):   # two-pass vid.stab on the exact source window (per-segment "stab": false skips it)
         trf = os.path.join(cache, f"stab_{hashlib.md5(f'{s["src"]}|{s["start"]}|{win:.3f}'.encode()).hexdigest()[:12]}.trf")
         if not os.path.exists(trf):
             subprocess.run(["ffmpeg", "-v", "error", "-y"] + src_in + ["-vf", f"vidstabdetect=shakiness=8:accuracy=15:result={trf}", "-f", "null", "-"], check=True)
