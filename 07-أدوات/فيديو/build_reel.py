@@ -61,7 +61,8 @@ chain.append(f"[{last}][ec]overlay=0:0:enable='gte(t,{t_end})'"+(f",fade=t=in:st
 
 ai = idx
 audio = ["-ss", str(m_off), "-t", str(total), "-i", music]
-af = f"[{ai}:a]afade=t=in:st=0:d=0.25,afade=t=out:st={total-1.8}:d=1.8[aout]"
+fo = cfg.get("music_fade_out", 1.8)   # 0 = let the track end naturally
+af = f"[{ai}:a]afade=t=in:st=0:d=0.05" + (f",afade=t=out:st={total-fo}:d={fo}" if fo else "") + "[aout]"
 
 cmd = ["ffmpeg", "-v", "error", "-y"] + inputs + ov_inputs + audio + [
     "-filter_complex", ";".join(filters + chain + [af]),
