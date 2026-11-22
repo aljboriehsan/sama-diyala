@@ -57,7 +57,7 @@ for j, (lab, a, b) in enumerate(groups):
 # end card
 ei = add_input(cfg["end_card"])
 chain.append(f"[{ei}:v]format=rgba,fade=t=in:st={t_end+0.1}:d=0.45:alpha=1[ec]")
-chain.append(f"[{last}][ec]overlay=0:0:enable='gte(t,{t_end})',fade=t=in:st=0:d=0.3,format=yuv420p[vout]")
+chain.append(f"[{last}][ec]overlay=0:0:enable='gte(t,{t_end})'"+(f",fade=t=in:st=0:d={cfg['fade_in']}" if cfg.get('fade_in') else "")+",format=yuv420p[vout]")
 
 ai = idx
 audio = ["-ss", str(m_off), "-t", str(total), "-i", music]
