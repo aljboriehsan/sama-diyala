@@ -6,18 +6,20 @@
 @font-face{font-family:Plex;font-weight:600;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
 html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden}
 .bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,77,44,.55) 0%,rgba(14,77,44,.86) 38%,rgba(10,58,33,.94) 100%)}
-.c{position:absolute;left:0;right:0;top:560px;display:flex;flex-direction:column;align-items:center;color:#fff;text-align:center}
+.c{position:absolute;left:0;right:0;top:500px;display:flex;flex-direction:column;align-items:center;color:#fff;text-align:center}
 .logo{height:150px}
 .name{font-family:Naskh;font-weight:700;font-size:60px;margin-top:4px}
 .t1{margin-top:70px;font-family:Naskh;font-weight:700;font-size:96px;line-height:1.25}
 .t1 span{color:#C9A44C}
-.t2{margin-top:18px;font-family:Plex;font-weight:500;font-size:36px;color:#E9F2EA}
+.t2{margin-top:18px;font-family:Plex;font-weight:500;font-size:36px;line-height:1.45;color:#E9F2EA}
 .btn{margin-top:80px;display:flex;align-items:center;gap:22px;height:130px;padding:0 54px 0 40px;border-radius:65px;background:#C9A44C;color:#0E4D2C}
 .btn .ic{width:76px;height:76px;border-radius:50%;background:#0E4D2C;display:flex;align-items:center;justify-content:center}
 .btn .ic svg{width:46px;height:46px}
 .btn .tx{display:flex;flex-direction:column;align-items:flex-start;line-height:1.15}
 .btn b{font-family:Plex;font-weight:600;font-size:40px}
 .btn i{font-style:normal;font-family:Plex;font-weight:600;font-size:30px;direction:ltr;word-spacing:-3px;letter-spacing:1px}
+.addr{position:absolute;left:0;right:0;bottom:380px;display:flex;align-items:center;justify-content:center;gap:12px;font-family:Plex;font-weight:500;font-size:32px;color:#E9F2EA}
+.addr svg{width:34px;height:34px}
 .st{position:absolute;left:50%;bottom:300px;transform:translateX(-50%);display:flex;gap:8px}
 .st i{display:block;width:56px;height:8px;transform:skewX(-35deg)}
 .st i:first-child{background:#C9A44C}.st i:last-child{background:#9FC2A6}
@@ -27,9 +29,10 @@ html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hi
   <img class="logo" src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg">
   <div class="name">سماء ديالى</div>
   <div class="t1">العالم أقرب…<br><span>مع سماء ديالى</span></div>
-  <div class="t2">وكيل الخطوط الجوية العراقية</div>
+  <div class="t2">الوكيل العام للخطوط الجوية العراقية<br>في محافظة ديالى</div>
   <div class="btn"><div class="ic"><svg viewBox="0 0 32 32" fill="#C9A44C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></div>
     <div class="tx"><b>تواصل معنا</b><i>077 0006 9900</i></div></div>
 </div>
+<div class="addr"><svg viewBox="0 0 24 24" fill="#C9A44C"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2z"/></svg>بعقوبة – قرب كراج البحيرة</div>
 <div class="st"><i></i><i></i></div>
 <script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
