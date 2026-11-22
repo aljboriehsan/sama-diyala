@@ -136,6 +136,38 @@
    "fade_in": 0.3,
    "fade_out": 0.3,
    "rise": 28
+  },
+  {
+   "img": "عناصر/يشمل-1.png",
+   "start": 5.4,
+   "end": 8.8,
+   "fade_in": 0.25,
+   "fade_out": 0.25,
+   "rise": 12
+  },
+  {
+   "img": "عناصر/يشمل-2.png",
+   "start": 9.0,
+   "end": 12.4,
+   "fade_in": 0.25,
+   "fade_out": 0.25,
+   "rise": 12
+  },
+  {
+   "img": "عناصر/يشمل-3.png",
+   "start": 12.6,
+   "end": 16.0,
+   "fade_in": 0.25,
+   "fade_out": 0.25,
+   "rise": 12
+  },
+  {
+   "img": "عناصر/يشمل-4.png",
+   "start": 16.2,
+   "end": 19.15,
+   "fade_in": 0.25,
+   "fade_out": 0.25,
+   "rise": 12
   }
  ],
  "stabilize": true
