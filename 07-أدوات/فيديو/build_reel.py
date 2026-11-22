@@ -1,7 +1,7 @@
 # Builds a vertical reel (1080x1920, 30 fps) from clip segments cut on the music beat,
 # with the small logo on top, city labels, and an end card.
 # Usage: python3 build_reel.py <config.json>
-import json, subprocess, sys, os
+import json, subprocess, sys, os, hashlib
 
 cfg = json.load(open(sys.argv[1]))
 base = os.path.dirname(os.path.abspath(sys.argv[1]))
@@ -14,13 +14,28 @@ W, H, FPS = 1080, 1920, 30
 
 inputs, filters = [], []
 cum = 0.0
+stab = cfg.get("stabilize", False)
+cache = os.path.join(base, ".cache"); os.makedirs(cache, exist_ok=True)
 for i, s in enumerate(segs):
-    inputs += ["-ss", str(s["start"]), "-t", str(s["dur"] + 0.2), "-i", P(s["src"])]
+    # "end" = end of the source shot: a shot shorter than dur is slowed down to fill it (no cut inside a segment)
+    sp = min(1.0, (s["end"] - s["start"]) / s["dur"]) if "end" in s else 1.0
+    win = s["dur"] * sp
+    src_in = ["-ss", str(s["start"]), "-t", str(win + 0.2), "-i", P(s["src"])]
+    inputs += src_in
     n = int(round((cum + s["dur"]) * FPS)) - int(round(cum * FPS))   # frame-exact cumulative cuts
     cum += s["dur"]
     z = s.get("zoom", 0.05)
+    pre = ""
+    if stab:   # two-pass vid.stab on the exact source window
+        trf = os.path.join(cache, f"stab_{hashlib.md5(f'{s["src"]}|{s["start"]}|{win:.3f}'.encode()).hexdigest()[:12]}.trf")
+        if not os.path.exists(trf):
+            subprocess.run(["ffmpeg", "-v", "error", "-y"] + src_in + ["-vf", f"vidstabdetect=shakiness=8:accuracy=15:result={trf}", "-f", "null", "-"], check=True)
+        pre += f"vidstabtransform=input={trf}:smoothing=20:optzoom=1:interpol=bicubic,"
+    if sp < 0.999:
+        pre += f"setpts=(PTS-STARTPTS)/{sp:.4f},minterpolate=fps={FPS}:mi_mode=mci:mc_mode=aobmc:me_mode=bidir:vsbmc=1,"
+    # zoom on a 2x canvas so the push-in moves in half-pixel steps (no stair-step wobble)
     filters.append(
-        f"[{i}:v]fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1,"
+        f"[{i}:v]{pre}fps={FPS},scale={2*W}:{2*H}:flags=lanczos,setsar=1,"
         f"zoompan=z='1+{z}*on/{n}':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s={W}x{H}:fps={FPS},"
         f"trim=end_frame={n},setpts=PTS-STARTPTS,"
         f"eq=contrast=1.04:saturation=1.06,unsharp=5:5:0.4[v{i}]")
@@ -54,12 +69,14 @@ for j, (lab, a, b) in enumerate(groups):
     ii = add_input(cfg["labels"][lab])
     chain.append(f"[{ii}:v]format=rgba,fade=t=in:st={a}:d=0.2:alpha=1,fade=t=out:st={b-0.2}:d=0.2:alpha=1[lb{j}]")
     chain.append(f"[{last}][lb{j}]overlay=x=0:y={H-cfg.get('label_bottom',560)}:enable='between(t,{a},{b})'[o{j+1}]"); last = f"o{j+1}"
-# timed full-frame overlays: [{img, start, end, fade_out?}]
+# timed full-frame overlays: [{img, start, end, fade_in?, fade_out?, rise?}] (rise = px it slides up while fading in)
 for j, ov in enumerate(cfg.get("overlays", [])):
     oi = add_input(ov["img"])
-    ofo = ov.get("fade_out", 0.3)
-    chain.append(f"[{oi}:v]format=rgba,fade=t=out:st={ov['end']-ofo}:d={ofo}:alpha=1[ov{j}]")
-    chain.append(f"[{last}][ov{j}]overlay=0:0:enable='between(t,{ov['start']},{ov['end']})'[ovo{j}]"); last = f"ovo{j}"
+    a, b = ov["start"], ov["end"]; ofi, ofo, r = ov.get("fade_in", 0), ov.get("fade_out", 0.3), ov.get("rise", 0)
+    f = "format=rgba" + (f",fade=t=in:st={a}:d={ofi}:alpha=1" if ofi else "") + f",fade=t=out:st={b-ofo}:d={ofo}:alpha=1"
+    chain.append(f"[{oi}:v]{f}[ov{j}]")
+    y = f"'{r}*pow(max(0,1-(t-{a})/{ofi}),2)'" if r and ofi else "0"
+    chain.append(f"[{last}][ov{j}]overlay=x=0:y={y}:eval=frame:enable='between(t,{a},{b})'[ovo{j}]"); last = f"ovo{j}"
 # end card
 ei = add_input(cfg["end_card"])
 chain.append(f"[{ei}:v]format=rgba,fade=t=in:st={t_end+0.1}:d=0.45:alpha=1[ec]")
