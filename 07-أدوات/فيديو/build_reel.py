@@ -13,9 +13,11 @@ total = sum(s["dur"] for s in segs)
 W, H, FPS = 1080, 1920, 30
 
 inputs, filters = [], []
+cum = 0.0
 for i, s in enumerate(segs):
     inputs += ["-ss", str(s["start"]), "-t", str(s["dur"] + 0.2), "-i", P(s["src"])]
-    n = int(round(s["dur"] * FPS))
+    n = int(round((cum + s["dur"]) * FPS)) - int(round(cum * FPS))   # frame-exact cumulative cuts
+    cum += s["dur"]
     z = s.get("zoom", 0.05)
     filters.append(
         f"[{i}:v]fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1,"
