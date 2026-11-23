@@ -59,42 +59,6 @@ def page(title, css, body):
 <script>document.fonts.ready.then(()=>{{document.body.dataset.ready='1'}})</script></body></html>'''
 
 D = {}
-# 1 — the whole post is a boarding pass from us to their office
-D['1 - بطاقة الصعود'] = page('بطاقة الصعود', '''
-.ad{background:radial-gradient(80% 50% at 50% 40%,#ffffff 0%,#f2f7f3 60%,#e6efe8 100%);color:#0E4D2C}
-.txt{position:absolute;top:226px;left:0;right:0;text-align:center}
-.greet{font-size:50px;color:var(--dgold)} .ttl{font-size:84px;margin-top:2px}
-.pass{position:absolute;left:60px;right:60px;top:470px;height:560px;display:flex;direction:rtl;filter:drop-shadow(0 20px 40px rgba(14,77,44,.18))}
-.pass .m{flex:1;background:#fff;border-radius:0 28px 28px 0;padding:40px 44px;position:relative;
-  -webkit-mask:radial-gradient(circle at 0 0,transparent 22px,#000 22.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 22px,#000 22.5px) bottom/100% 51% no-repeat}
-.pass .s{width:300px;background:#0E4D2C;color:#fff;border-radius:28px 0 0 28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  -webkit-mask:radial-gradient(circle at 100% 0,transparent 22px,#000 22.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 22px,#000 22.5px) bottom/100% 51% no-repeat}
-.pass .cut{width:0;border-right:3px dashed #BFD2C4;margin:30px 0}
-.r1{display:flex;align-items:center;justify-content:space-between}
-.r1 img{height:62px}
-.pill{background:#0E4D2C;color:#fff;border-radius:999px;padding:8px 22px 10px;font-family:Plex;font-weight:500;font-size:20px;display:flex;align-items:center;gap:10px}
-.pill svg{width:20px;height:20px;color:#C9A44C}
-.route{margin-top:58px;display:flex;align-items:center;justify-content:space-between;direction:rtl}
-.route .p{display:flex;flex-direction:column;align-items:center}
-.route .c{font-family:Plex;font-weight:600;font-size:56px;line-height:1;letter-spacing:2px}
-.route .n{font-family:Plex;font-weight:500;font-size:20px;color:#6E8B77;margin-top:8px}
-.route .ln{flex:1;margin:0 24px;height:2px;background-image:radial-gradient(circle,#C9A44C 1.6px,transparent 2px);background-size:14px 2px;position:relative}
-.route .ln svg{position:absolute;left:50%;top:50%;width:40px;height:40px;transform:translate(-50%,-50%) scaleX(-1);color:#C9A44C;background:#fff;padding:4px}
-.fs{margin-top:70px;display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
-.f .k{font-family:Plex;font-size:19px;color:#6E8B77;margin-bottom:6px}
-.f .v{font-family:Plex;font-weight:600;font-size:27px;line-height:1.3}
-.s .k{font-family:Plex;font-weight:500;font-size:24px;color:#9FC2A6}
-.s .n{font-family:Plex;font-weight:600;font-size:96px;line-height:1;color:#C9A44C;direction:ltr}
-.s img{height:54px;margin-top:22px;opacity:.95}
-''', header(False) + f'''
-<div class="txt"><div class="greet">صباح الخير</div><div class="ttl">يمكنكم الإصدار الآن</div></div>
-<div class="pass"><div class="m">
-  <div class="r1"><img src="{R}01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt=""><span class="pill">{PLANE}بطاقة إصدار</span></div>
-  <div class="route"><div class="p"><span class="c">SD</span><span class="n">سماء ديالى</span></div><div class="ln">{PLANE}</div><div class="p"><span class="c" style="font-family:Naskh;font-size:50px;letter-spacing:0">مكتبكم</span><span class="n">الوجهة</span></div></div>
-  <div class="fs"><div class="f"><div class="k">الناقل</div><div class="v">الخطوط الجوية العراقية</div></div><div class="f"><div class="k">الخدمة</div><div class="v">إصدار التذاكر</div></div></div>
-</div><div class="cut"></div><div class="s"><span class="k">العمولة</span><span class="n">{COMMISSION}</span><img src="{R}01-الشعار/أحادي بلا الاسم الصغير/الرمز - ذهبي.svg" alt=""></div></div>
-''' + contacts(False))
-
 # 2 — our real office with the Iraqi Airways wall
 D['2 - المكتب'] = page('المكتب', '''
 .ad{background:#0E4D2C;color:#fff}
