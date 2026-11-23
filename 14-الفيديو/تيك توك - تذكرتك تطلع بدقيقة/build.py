@@ -6,12 +6,12 @@ L = os.path.join(R, '14-الفيديو/مقاطع/المكتب')
 FPS, W, H = 30, 1080, 1920
 # (clip, start, dur, gain dB, blur boxes [x,y,w,h,radius]) — boxes hide booking data on screen/tickets
 segs = [
- ('المكتب - الحجز على الكيبورد.mov',        0.80, 2.0, 10, [(0, 0, 1080, 930, 22)]),
+ ('المكتب - الحجز على الكيبورد.mov',        0.60, 3.0, 10, [(0, 0, 1080, 930, 22)]),
  ('المكتب - الطابعة تخرج التذكرة.mov',     0.25, 2.0, 6,  [(330, 880, 600, 560, 7)]),
  ('المكتب - ختم التذكرة.mov',              0.95, 1.6, 7,  [(160, 620, 760, 520, 6)]),
  ('المكتب - وضع التذكرة في الغلاف.mov',    2.20, 1.6, 11, []),
  ('المكتب - تسليم التذكرة للزبون.mov',     0.00, 1.6, 11, []),
- ('المكتب - جولة في القاعة وجدار العراقية.mov', 2.60, 3.6, 4, []),
+ ('المكتب - جولة في القاعة وجدار العراقية.mov', 2.40, 4.4, 4, []),
 ]
 MUSIC = os.path.join(R, '14-الفيديو/موسيقى/leberch-travel-documentary-519393.mp3'); M_START = 96.8
 total = sum(s[2] for s in segs); t_end = total - 2.2
@@ -38,9 +38,9 @@ hook = k; endc = k + 1; mus = k + 2
 inp += ['-loop', '1', '-t', str(total), '-i', os.path.join(D, 'عناصر/البداية.png'),
         '-loop', '1', '-t', str(total), '-i', os.path.join(D, 'عناصر/الختام.png'),
         '-ss', str(M_START), '-t', str(total - t_end + 0.2), '-i', MUSIC]
-fv.append(f'[{hook}:v]format=rgba,fade=t=out:st=1.75:d=0.25:alpha=1[hk]')
+fv.append(f'[{hook}:v]format=rgba,fade=t=out:st=2.75:d=0.25:alpha=1[hk]')
 fv.append(f'[{endc}:v]format=rgba,fade=t=in:st={t_end}:d=0.45:alpha=1[ec]')
-fv.append(f"[base][hk]overlay=0:0:enable='lt(t,2.0)'[b1]")
+fv.append(f"[base][hk]overlay=0:0:enable='lt(t,3.0)'[b1]")
 fv.append(f"[b1][ec]overlay=0:0:enable='gte(t,{t_end})',format=yuv420p[vout]")
 # the office ambience dips under the music; music fades in with the end card and ends with the track
 fa.append(f"[orig]volume='if(gte(t,{t_end}),0.35,1)':eval=frame[od]")
