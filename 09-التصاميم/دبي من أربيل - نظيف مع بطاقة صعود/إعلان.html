@@ -4,21 +4,25 @@
 <meta charset="utf-8">
 <title>دبي من أربيل - الأردن رأس السنة - نظيف مع بطاقة صعود</title>
 <style>
-  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
 
   :root{
-    --kick-dx:140.3px;
+    --kick-dx:123.8px;
     --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
     --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
     --accent:var(--gold);   /* price colour */
     --img-y:0px;
-    --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
     /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -36,21 +40,21 @@
   .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
   .lockup img{height:84px;display:block}
   .lockup{transform:translateX(var(--lock-dx))}
-  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:64px;line-height:1;padding-bottom:8px;white-space:nowrap;
                 transform:translateY(var(--name-dy))}
   /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
-  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 
-  .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
+  .dest{margin-top:30px;font-family:Tajawal;font-weight:700;font-size:139px;line-height:1.05;
         text-shadow:0 2px 24px rgba(0,0,0,.25)}
   .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
-  .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
-  .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
-  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
-  .airline{margin-top:10px;font-family:Plex;font-weight:500;font-size:22px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .price .from{font-family:TajawalT;font-weight:500;font-size:28px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
+  .price .num{font-family:TajawalT;font-weight:600;font-size:113px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-family:TajawalT;font-weight:500;font-size:35px;position:relative;top:-10px}
+  .airline{margin-top:10px;font-family:TajawalT;font-weight:500;font-size:26px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
-  .kicker{width:max-content;transform:translateX(var(--kick-dx,212px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,212px));margin-top:44px;font-family:TajawalT;font-weight:500;font-size:35px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
   .kicker + .dest{margin-top:10px}
   /* boarding pass at the bottom */
   .pass{position:absolute;left:56px;right:56px;bottom:108px;height:226px;display:flex;direction:rtl;
@@ -64,18 +68,18 @@
   .pass .cut::before{top:-16px} .pass .cut::after{bottom:-16px}
   .row1{display:flex;align-items:center;justify-content:space-between}
   .bplogo{height:58px;display:block}
-  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:Plex;font-weight:500;font-size:18px}
+  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:TajawalT;font-weight:500;font-size:21px}
   .bp svg{width:17px;height:17px;color:var(--gold)}
   .route{display:flex;align-items:flex-start;gap:16px;direction:ltr}
-  .route .code{font-family:Plex;font-weight:600;font-size:38px;letter-spacing:2px;line-height:1}
-  .route .city{font-family:Plex;font-size:16px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
+  .route .code{font-family:TajawalT;font-weight:600;font-size:45px;letter-spacing:2px;line-height:1}
+  .route .city{font-family:TajawalT;font-size:19px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
   .route svg{margin-top:13px;width:120px;height:14px}
   .fields{margin-top:26px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px}
-  .f .k{font-family:Plex;font-size:16px;color:#6E8B77;margin-bottom:4px}
-  .f .v .sub{display:block;font-weight:500;font-size:18px;color:#3E6B4C}
-  .f .v{font-family:Plex;font-weight:600;font-size:22px;line-height:1.3;white-space:nowrap}
-  .stubx .k{font-family:Plex;font-size:16px;color:#9FC2A6;margin-bottom:10px}
-  .stubx ul{list-style:none;font-family:Plex;font-weight:500;font-size:19px;line-height:1.55}
+  .f .k{font-family:TajawalT;font-size:19px;color:#6E8B77;margin-bottom:4px}
+  .f .v .sub{display:block;font-weight:500;font-size:21px;color:#3E6B4C}
+  .f .v{font-family:TajawalT;font-weight:600;font-size:26px;line-height:1.3;white-space:nowrap}
+  .stubx .k{font-family:TajawalT;font-size:19px;color:#9FC2A6;margin-bottom:10px}
+  .stubx ul{list-style:none;font-family:TajawalT;font-weight:500;font-size:22px;line-height:1.55}
   .stubx li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:10px;vertical-align:middle}
   .perf{margin-top:20px;width:440px;height:2px;
         background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
@@ -83,34 +87,37 @@
 
   /* ---- footer ---- */
   .foot{position:absolute;left:56px;right:56px;bottom:46px;color:#fff;display:flex;align-items:flex-end;justify-content:space-between}
-  .dur .from{font-family:Plex;font-weight:500;font-size:19px;opacity:.85;display:block;margin-bottom:2px}
-  .dur .val{font-family:Plex;font-weight:600;font-size:32px;line-height:1.2;white-space:nowrap}
+  .dur .from{font-family:TajawalT;font-weight:500;font-size:22px;opacity:.85;display:block;margin-bottom:2px}
+  .dur .val{font-family:TajawalT;font-weight:600;font-size:38px;line-height:1.2;white-space:nowrap}
   .stripes{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px}
   .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
   .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
   .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
   .wa .ph{word-spacing:-3px}
   .wa svg{width:28px;height:28px;flex:none}
-  .wa span{font-family:Plex;font-weight:500;font-size:25px;letter-spacing:1px}
-  .dest{font-size:136px !important;line-height:1.05 !important;margin-top:0 !important}
+  .wa span{font-family:TajawalT;font-weight:500;font-size:30px;letter-spacing:1px}
+  .dest{font-size:160px !important;line-height:1.05 !important;margin-top:0 !important}
   .kicker{margin-top:30px !important;font-weight:600 !important}
   .price{margin-top:34px !important}
   /* bigger text throughout (header lockup and 20px agent line stay as measured) */
-  .kicker{font-size:40px !important}
-  .price .from{font-size:31px !important;padding-top:18px !important}
-  .price .cur{font-size:40px !important}
+  .kicker{font-size:47px !important}
+  .price .from{font-size:37px !important;padding-top:18px !important}
+  .price .cur{font-size:47px !important}
   .pass{height:262px !important}
   .route{gap:12px !important}
-  .route .code{font-size:44px !important}
-  .route .city{font-size:21px !important}
+  .route .code{font-size:52px !important}
+  .route .city{font-size:25px !important}
   .route svg{width:78px !important;margin-top:16px !important}
   .fields{margin-top:30px !important}
-  .f .k{font-size:21px !important}
-  .f .v{font-size:29px !important}
-  .stubx .k{font-size:21px !important}
-  .stubx ul{font-size:25px !important;line-height:1.6 !important}
-  .wa span{font-size:31px !important}
+  .f .k{font-size:25px !important}
+  .f .v{font-size:34px !important}
+  .stubx .k{font-size:25px !important}
+  .stubx ul{font-size:30px !important;line-height:1.6 !important}
+  .wa span{font-size:37px !important}
   .wa svg{width:33px !important;height:33px !important}
+  .tag{margin-top:10px !important}
+  .price{margin-top:44px !important}
+  .pass{height:285px !important}
 </style>
 </head>
 <body>
@@ -170,6 +177,10 @@
   </div>
   <div class="stripes"><i></i><i></i></div>
 </div>
-<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+<script>
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ t.style.transform='none'; let ws=0; for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width; if(Math.abs(d)<0.5)break; ws+=d/5*0.9; t.style.wordSpacing=ws+'px';}
+ document.body.dataset.ready='1'});
+</script>
 </body>
 </html>
