@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>عمولة الإصدار - النافذة</title>
+<style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--light:#E9F2EA;--ink:#fff;
+  --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#0E4D2C}
+.ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:#fff;
+  background:radial-gradient(85% 60% at 18% 8%,#3d8a52 0%,#1d6a40 30%,#0E4D2C 62%,#093a20 100%)}
+  .head{position:absolute;top:58px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+.head{position:absolute;top:44px;left:0;right:0;display:flex;flex-direction:column;align-items:center;z-index:5}
+.mist{position:absolute;width:380px;height:150px;transform-origin:0 0;filter:blur(14px)}
+.mist i{position:absolute;border-radius:50%;background:#fff}
+.win{position:absolute;left:325px;top:212px;width:430px;height:612px;border-radius:230px;overflow:hidden;
+  box-shadow:0 0 0 13px rgba(233,242,234,.92),0 0 0 15px rgba(201,164,76,.9),0 18px 60px rgba(0,0,0,.35)}
+.win img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.win::after{content:"";position:absolute;inset:0;border-radius:230px;box-shadow:inset 0 0 40px rgba(14,77,44,.35)}
+.plane{position:absolute;left:150px;top:346px;width:780px;z-index:3;filter:drop-shadow(0 22px 26px rgba(0,0,0,.28))}
+.over{z-index:4}
+.rows{position:absolute;left:0;right:0;top:858px;display:flex;flex-direction:column;align-items:center;gap:14px;z-index:5}
+.kick{font-family:Naskh;font-weight:700;font-size:54px;line-height:1.15;color:var(--gold);margin-bottom:0}
+.row{display:flex;align-items:stretch;gap:10px;direction:ltr}
+.box{direction:rtl;background:#fff;color:var(--green);border-radius:14px;padding:0 30px;height:68px;display:flex;align-items:center;
+  font-family:Plex;font-weight:600;font-size:34px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.sq{width:68px;height:68px;border-radius:14px;background:var(--mid);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.sq svg{width:38px;height:38px}
+.row.big .box{height:84px;background:var(--gold);font-size:38px;gap:16px}
+.row.big .box b{font-weight:600;font-size:58px;direction:ltr;letter-spacing:1px}
+.row.big .sq{height:84px;width:84px;background:#E9F2EA}
+.contacts{position:absolute;left:96px;right:96px;bottom:66px;display:flex;gap:22px;z-index:5}
+.ct{flex:1;height:66px;border:1.5px solid rgba(233,242,234,.55);border-radius:16px;display:flex;align-items:center;justify-content:center;gap:14px;
+  font-family:Plex;font-weight:500;font-size:27px;color:#fff;direction:ltr;background:rgba(255,255,255,.04)}
+.ct svg{width:30px;height:30px;color:var(--gold);flex:none}
+.ct.ph span{word-spacing:-4px;letter-spacing:1px;font-weight:600;font-size:30px}
+.stripes{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;gap:7px}
+.stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+.stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+</style></head><body><div class="ad">
+  <div class="mist" style="left:-70px;top:520px;transform:scale(1.25);opacity:0.55"><i style="left:0px;top:40px;width:120px;height:80px"></i><i style="left:70px;top:0px;width:160px;height:120px"></i><i style="left:170px;top:25px;width:140px;height:95px"></i><i style="left:250px;top:55px;width:110px;height:70px"></i><i style="left:40px;top:70px;width:260px;height:70px"></i></div>
+  <div class="mist" style="left:800px;top:600px;transform:scale(1.15) scaleX(-1);opacity:0.5"><i style="left:0px;top:40px;width:120px;height:80px"></i><i style="left:70px;top:0px;width:160px;height:120px"></i><i style="left:170px;top:25px;width:140px;height:95px"></i><i style="left:250px;top:55px;width:110px;height:70px"></i><i style="left:40px;top:70px;width:260px;height:70px"></i></div>
+  <div class="mist" style="left:780px;top:190px;transform:scale(0.8) scaleX(-1);opacity:0.3"><i style="left:0px;top:40px;width:120px;height:80px"></i><i style="left:70px;top:0px;width:160px;height:120px"></i><i style="left:170px;top:25px;width:140px;height:95px"></i><i style="left:250px;top:55px;width:110px;height:70px"></i><i style="left:40px;top:70px;width:260px;height:70px"></i></div>
+  <div class="mist" style="left:-60px;top:960px;transform:scale(0.9);opacity:0.25"><i style="left:0px;top:40px;width:120px;height:80px"></i><i style="left:70px;top:0px;width:160px;height:120px"></i><i style="left:170px;top:25px;width:140px;height:95px"></i><i style="left:250px;top:55px;width:110px;height:70px"></i><i style="left:40px;top:70px;width:260px;height:70px"></i></div>
+  <div class="win"><img src="عناصر/سماء النافذة.jpg" alt=""></div>
+  <img class="plane" src="عناصر/الطائرة.png" alt="">
+  <div class="head">
+    <div class="brand" id="brand">
+      <div class="lockup" id="lockup">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
+        <div class="name">سماء ديالى</div>
+      </div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
+    </div>
+  </div>
+  <div class="rows">
+    <div class="kick">صباح الخير</div>
+    <div class="row"><span class="sq"><svg viewBox="0 0 24 24" fill="#fff"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z" transform="rotate(-90 12 12)"/></svg></span><span class="box">يمكنكم الإصدار الآن</span></div>
+    <div class="row"><span class="box">تذاكر الخطوط الجوية العراقية</span></div>
+    <div class="row big"><span class="sq"><svg viewBox="0 0 24 24" fill="none" stroke="#0E4D2C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></span><span class="box">بعمولة <b>6.5%</b></span></div>
+  </div>
+  <div class="contacts">
+    <div class="ct ph"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>077 0006 9900</span></div>
+    <div class="ct em"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.2 7 12 11.5 18.8 7H5.2z"/></svg><span>samaa_dyala1@yahoo.com</span></div>
+  </div>
+  <div class="stripes"><i></i><i></i></div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+</body></html>

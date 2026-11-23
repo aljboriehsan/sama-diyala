@@ -1,13 +1,19 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>المكتب</title><style>
-  @font-face{font-family:Naskh;font-weight:700;src:url("../../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
 :root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;
-  --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;}
+  --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;overflow:hidden}
 .ad{position:relative;width:1080px;height:1350px;overflow:hidden}
@@ -15,9 +21,9 @@ html,body{width:1080px;height:1350px;overflow:hidden}
   .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
   .lockup img{height:84px;display:block}
   .lockup{transform:translateX(var(--lock-dx))}
-  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:62px;line-height:1;padding-bottom:8px;white-space:nowrap;
                 transform:translateY(var(--name-dy))}
-  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 .head{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;z-index:5}
 .tag{opacity:1}
@@ -25,26 +31,27 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 .ct .it{display:flex;align-items:center;gap:16px}
 .ct .ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
 .ct .ic svg{width:32px;height:32px}
-.ct .k{font-family:Plex;font-weight:500;font-size:19px;line-height:1.2}
-.ct .v{font-family:Plex;font-weight:600;font-size:32px;line-height:1.25;direction:ltr;text-align:right}
+.ct .k{font-family:TajawalT;font-weight:500;font-size:22px;line-height:1.2}
+.ct .v{font-family:TajawalT;font-weight:600;font-size:37px;line-height:1.25;direction:ltr;text-align:right}
 .ct .v.ph{word-spacing:-4px;letter-spacing:1px}
-.ct .v.em{font-size:25px;font-weight:500}
+.ct .v.em{font-size:29px;font-weight:500}
 .ct .sep{width:1.5px;height:70px;background:var(--gold);opacity:.7}
 .stripes{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;gap:7px;z-index:5}
 .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
 .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
-.greet{font-family:Naskh;font-weight:700;line-height:1.15}
-.ttl{font-family:Naskh;font-weight:700;line-height:1.15}
-.sub{font-family:Plex;font-weight:500}
+.greet{font-family:Tajawal;font-weight:700;line-height:1.15}
+.ttl{font-family:Tajawal;font-weight:700;line-height:1.15}
+.sub{font-family:TajawalT;font-weight:500}
 
 .ad{background:#0E4D2C;color:#fff}
 .bgph{position:absolute;left:-1010px;top:-40px;height:1440px}
 .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,24,.78) 0%,rgba(8,40,24,.25) 22%,rgba(8,40,24,0) 34%,rgba(8,40,24,.15) 48%,rgba(10,58,33,.88) 64%,#0b4026 78%)}
 .txt{position:absolute;top:842px;left:0;right:0;text-align:center}
-.greet{font-size:48px;color:var(--gold)} .ttl{font-size:84px} .sub{font-size:30px;color:#E9F2EA;margin-top:4px}
+.greet{font-size:55px;color:var(--gold)} .ttl{font-size:97px} .sub{font-size:34px;color:#E9F2EA;margin-top:4px}
 .comm{margin-top:14px;display:inline-flex;align-items:center;gap:18px}
-.comm .w{font-family:Naskh;font-weight:700;font-size:58px}
-.comm .n{font-family:Plex;font-weight:600;font-size:104px;line-height:1;color:var(--gold);direction:ltr}
+.comm .w{font-family:Tajawal;font-weight:700;font-size:67px}
+.comm .n{font-family:TajawalT;font-weight:600;font-size:120px;line-height:1;color:var(--gold);direction:ltr}
+.tag{margin-top:10px !important}
 </style></head><body><div class="ad">
 <img class="bgph" src="../../../08-الصور/المكتب - الواجهة (نهائية بإضاءة سينمائية).jpg" alt=""><div class="sh"></div><div class="head" style="top:46px;color:#fff"><div class="brand" id="brand"><div class="lockup" id="lockup">
 <img src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="name">سماء ديالى</div></div>
@@ -56,4 +63,9 @@ html,body{width:1080px;height:1350px;overflow:hidden}
 <div class="sep"></div>
 <div class="it"><span class="ic" style="background:#C9A44C;color:#0E4D2C"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.2 7 12 11.5 18.8 7H5.2z"/></svg></span><div><div class="k" style="color:rgba(233,242,234,.75)">البريد الإلكتروني</div><div class="v em">samaa_dyala1@yahoo.com</div></div></div></div>
 <div class="stripes"><i></i><i></i></div></div>
-<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
+<script>
+// stretch the agent line to the exact width of logo + name (Tajawal widths differ from the old measured setup)
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ if(t&&l){t.style.transform='none';let ws=0;for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}}
+ document.body.dataset.ready='1'});
+</script></body></html>

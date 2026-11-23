@@ -4,20 +4,26 @@
 <meta charset="utf-8">
 <title>عمولة الإصدار للمكاتب</title>
 <style>
-  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
 
   :root{
     --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
     --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
     --accent:var(--gold);   /* price colour */
     --img-y:-150px;
-    --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
     /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
   }
   *{margin:0;padding:0;box-sizing:border-box}
@@ -36,21 +42,21 @@
   .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
   .lockup img{height:84px;display:block}
   .lockup{transform:translateX(var(--lock-dx))}
-  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:62px;line-height:1;padding-bottom:8px;white-space:nowrap;
                 transform:translateY(var(--name-dy))}
   /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
-  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 
-  .dest{margin-top:30px;font-family:Naskh;font-weight:700;font-size:118px;line-height:1.05;
+  .dest{margin-top:30px;font-family:Tajawal;font-weight:700;font-size:136px;line-height:1.05;
         text-shadow:0 2px 24px rgba(0,0,0,.25)}
   .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
-  .price .from{font-family:Plex;font-weight:500;font-size:24px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
-  .price .num{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
-  .price .cur{font-family:Plex;font-weight:500;font-size:30px;position:relative;top:-10px}
-  .airline{margin-top:10px;font-family:Plex;font-weight:500;font-size:22px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .price .from{font-family:TajawalT;font-weight:500;font-size:28px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
+  .price .num{font-family:TajawalT;font-weight:600;font-size:110px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-family:TajawalT;font-weight:500;font-size:34px;position:relative;top:-10px}
+  .airline{margin-top:10px;font-family:TajawalT;font-weight:500;font-size:25px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
-  .kicker{width:max-content;transform:translateX(var(--kick-dx,0px));margin-top:44px;font-family:Plex;font-weight:500;font-size:30px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,0px));margin-top:44px;font-family:TajawalT;font-weight:500;font-size:34px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
   .kicker + .dest{margin-top:10px}
   /* boarding pass at the bottom */
   .pass{position:absolute;left:56px;right:56px;bottom:108px;height:226px;display:flex;direction:rtl;
@@ -64,67 +70,68 @@
   .pass .cut::before{top:-16px} .pass .cut::after{bottom:-16px}
   .row1{display:flex;align-items:center;justify-content:space-between}
   .bplogo{height:58px;display:block}
-  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:Plex;font-weight:500;font-size:18px}
+  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:TajawalT;font-weight:500;font-size:21px}
   .bp svg{width:17px;height:17px;color:var(--gold)}
   .route{display:flex;align-items:flex-start;gap:16px;direction:ltr}
-  .route .code{font-family:Plex;font-weight:600;font-size:38px;letter-spacing:2px;line-height:1}
-  .route .city{font-family:Plex;font-size:16px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
+  .route .code{font-family:TajawalT;font-weight:600;font-size:44px;letter-spacing:2px;line-height:1}
+  .route .city{font-family:TajawalT;font-size:18px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
   .route svg{margin-top:13px;width:120px;height:14px}
   .fields{margin-top:26px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px}
-  .f .k{font-family:Plex;font-size:16px;color:#6E8B77;margin-bottom:4px}
-  .f .v .fr{display:block;font-weight:500;font-size:15px;color:#6E8B77;line-height:1.2;margin-bottom:2px}
-  .f .v .sub{display:block;font-weight:500;font-size:18px;color:#3E6B4C}
-  .f .v{font-family:Plex;font-weight:600;font-size:22px;line-height:1.3;white-space:nowrap}
-  .stubx .k{font-family:Plex;font-size:16px;color:#9FC2A6;margin-bottom:10px}
-  .stubx ul{list-style:none;font-family:Plex;font-weight:500;font-size:19px;line-height:1.55}
+  .f .k{font-family:TajawalT;font-size:18px;color:#6E8B77;margin-bottom:4px}
+  .f .v .fr{display:block;font-weight:500;font-size:17px;color:#6E8B77;line-height:1.2;margin-bottom:2px}
+  .f .v .sub{display:block;font-weight:500;font-size:21px;color:#3E6B4C}
+  .f .v{font-family:TajawalT;font-weight:600;font-size:25px;line-height:1.3;white-space:nowrap}
+  .stubx .k{font-family:TajawalT;font-size:18px;color:#9FC2A6;margin-bottom:10px}
+  .stubx ul{list-style:none;font-family:TajawalT;font-weight:500;font-size:22px;line-height:1.55}
   .stubx li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:10px;vertical-align:middle}
   .glow{position:absolute;inset:0;background:radial-gradient(120% 60% at 50% 0%,#1d6a40 0%,#0E4D2C 55%,#0a3a21 100%)}
   .collage{position:absolute;inset:0;display:block}
-  .dest{font-size:92px !important;line-height:1.18 !important;text-align:center}
+  .dest{font-size:106px !important;line-height:1.18 !important;text-align:center}
   .card{position:absolute;left:56px;right:56px;bottom:108px;height:290px;border-radius:24px;
         background:rgba(255,255,255,.72);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px);
         display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;padding:22px 34px;column-gap:28px;direction:rtl}
   .pt{display:flex;align-items:center;gap:16px;color:#0E4D2C}
   .pt .ic{width:58px;height:58px;border-radius:50%;background:#C9A44C;display:flex;align-items:center;justify-content:center;flex:none}
   .pt .ic svg{width:32px;height:32px}
-  .pt .tx{font-family:Plex;font-weight:600;font-size:25px;line-height:1.35}
-  .sub{margin-top:8px;font-family:Plex;font-weight:500;font-size:28px;color:#E9F2EA;opacity:.95}
+  .pt .tx{font-family:TajawalT;font-weight:600;font-size:29px;line-height:1.35}
+  .sub{margin-top:8px;font-family:TajawalT;font-weight:500;font-size:32px;color:#E9F2EA;opacity:.95}
   .perf{margin-top:20px;width:440px;height:2px;
         background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
         background-size:12px 2px;background-repeat:repeat-x}
 
 
   .head .kicker{margin-top:48px}
-  .kicker.greet{font-family:Naskh;font-weight:700;font-size:50px;line-height:1.15;letter-spacing:0;margin-top:34px}
+  .kicker.greet{font-family:Tajawal;font-weight:700;font-size:57px;line-height:1.15;letter-spacing:0;margin-top:34px}
   .kicker.greet + .ttl{margin-top:2px}
   .comm + .perf{margin-top:34px}
-  .ttl{margin-top:8px;font-family:Naskh;font-weight:700;font-size:84px;line-height:1.15;text-align:center}
-  .line{margin-top:6px;font-family:Plex;font-weight:500;font-size:30px;color:#E9F2EA;opacity:.95}
+  .ttl{margin-top:8px;font-family:Tajawal;font-weight:700;font-size:97px;line-height:1.15;text-align:center}
+  .line{margin-top:6px;font-family:TajawalT;font-weight:500;font-size:34px;color:#E9F2EA;opacity:.95}
   .comm{margin-top:18px;display:flex;align-items:center;gap:22px}
-  .comm .w{font-family:Naskh;font-weight:700;font-size:64px;line-height:1}
-  .comm .n{font-family:Plex;font-weight:600;font-size:132px;line-height:1;color:var(--gold);direction:ltr;letter-spacing:1px}
+  .comm .w{font-family:Tajawal;font-weight:700;font-size:74px;line-height:1}
+  .comm .n{font-family:TajawalT;font-weight:600;font-size:152px;line-height:1;color:var(--gold);direction:ltr;letter-spacing:1px}
   .contact{position:absolute;left:56px;right:56px;bottom:96px;height:150px;border-radius:24px;
         background:rgba(255,255,255,.74);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px);
         display:flex;align-items:center;justify-content:space-around;padding:0 30px;direction:rtl;color:#0E4D2C}
   .contact .it{display:flex;align-items:center;gap:18px}
   .contact .ic{width:66px;height:66px;border-radius:50%;background:#0E4D2C;display:flex;align-items:center;justify-content:center;flex:none}
   .contact .ic svg{width:36px;height:36px}
-  .contact .k{font-family:Plex;font-weight:500;font-size:20px;color:#3E6B4C;line-height:1.2}
-  .contact .v{font-family:Plex;font-weight:600;font-size:34px;line-height:1.25;direction:ltr;text-align:right}
+  .contact .k{font-family:TajawalT;font-weight:500;font-size:23px;color:#3E6B4C;line-height:1.2}
+  .contact .v{font-family:TajawalT;font-weight:600;font-size:39px;line-height:1.25;direction:ltr;text-align:right}
   .contact .v.ph{word-spacing:-4px;letter-spacing:1px}
-  .contact .v.em{font-size:27px;font-weight:500}
+  .contact .v.em{font-size:31px;font-weight:500}
   .contact .sep{width:1px;height:84px;background:#C9A44C;opacity:.8}
   /* ---- footer ---- */
   .foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;align-items:flex-end;justify-content:space-between}
-  .dur .from{font-family:Plex;font-weight:500;font-size:19px;opacity:.85;display:block;margin-bottom:2px}
-  .dur .val{font-family:Plex;font-weight:600;font-size:32px;line-height:1.2;white-space:nowrap}
+  .dur .from{font-family:TajawalT;font-weight:500;font-size:22px;opacity:.85;display:block;margin-bottom:2px}
+  .dur .val{font-family:TajawalT;font-weight:600;font-size:37px;line-height:1.2;white-space:nowrap}
   .stripes{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px}
   .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
   .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
   .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
   .wa .ph{word-spacing:-3px}
   .wa svg{width:28px;height:28px;flex:none}
-  .wa span{font-family:Plex;font-weight:500;font-size:25px;letter-spacing:1px}
+  .wa span{font-family:TajawalT;font-weight:500;font-size:29px;letter-spacing:1px}
+.tag{margin-top:10px !important}
 </style>
 </head>
 <body>
@@ -158,6 +165,11 @@
   </div>
   <div class="stripes"><i></i><i></i></div>
 </div>
-<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+<script>
+// stretch the agent line to the exact width of logo + name (Tajawal widths differ from the old measured setup)
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ if(t&&l){t.style.transform='none';let ws=0;for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}}
+ document.body.dataset.ready='1'});
+</script>
 </body>
 </html>

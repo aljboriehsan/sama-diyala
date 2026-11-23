@@ -1,15 +1,21 @@
 <!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>عمولة الإصدار - المقدمة</title>
 <style>
-  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
-  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
 :root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;
-  --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;}
+  --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;}
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1350px;overflow:hidden;background:#fff}
 .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--green);
@@ -18,16 +24,16 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#fff}
   .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
   .lockup img{height:84px;display:block}
   .lockup{transform:translateX(var(--lock-dx))}
-  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:62px;line-height:1;padding-bottom:8px;white-space:nowrap;
                 transform:translateY(var(--name-dy))}
-  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 .head{position:absolute;top:52px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
 .tag{opacity:1;color:var(--mid)}
 .txt{position:absolute;top:640px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center}
-.greet{font-family:Naskh;font-weight:700;font-size:50px;line-height:1.15;color:var(--dgold)}
-.ttl{margin-top:2px;font-family:Naskh;font-weight:700;font-size:86px;line-height:1.15}
-.sub{margin-top:8px;font-family:Plex;font-weight:500;font-size:30px;color:var(--mid)}
+.greet{font-family:Tajawal;font-weight:700;font-size:57px;line-height:1.15;color:var(--dgold)}
+.ttl{margin-top:2px;font-family:Tajawal;font-weight:700;font-size:99px;line-height:1.15}
+.sub{margin-top:8px;font-family:TajawalT;font-weight:500;font-size:34px;color:var(--mid)}
 svg.deco{position:absolute;inset:0}
 .plane{position:absolute;left:330px;top:270px;width:830px;filter:drop-shadow(0 24px 26px rgba(14,77,44,.18))}
 /* commission as a boarding-pass stub */
@@ -35,24 +41,25 @@ svg.deco{position:absolute;inset:0}
 .tk .a{background:var(--gold);color:var(--green);border-radius:20px 0 0 20px;display:flex;align-items:center;gap:18px;padding:0 46px 0 40px;
   -webkit-mask:radial-gradient(circle at 100% 0,transparent 15px,#000 15.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 15px,#000 15.5px) bottom/100% 51% no-repeat}
 .tk .b{background:var(--green);color:#fff;border-radius:0 20px 20px 0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 34px;
-  font-family:Plex;font-weight:600;font-size:24px;line-height:1.3;border-left:2.5px dashed rgba(233,242,234,.0);
+  font-family:TajawalT;font-weight:600;font-size:28px;line-height:1.3;border-left:2.5px dashed rgba(233,242,234,.0);
   -webkit-mask:radial-gradient(circle at 0 0,transparent 15px,#000 15.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 15px,#000 15.5px) bottom/100% 51% no-repeat}
-.tk .b small{font-weight:500;font-size:19px;color:#9FC2A6}
+.tk .b small{font-weight:500;font-size:22px;color:#9FC2A6}
 .tk .cut{width:0;border-right:2.5px dashed #E9F2EA;margin:16px 0}
-.tk .w{font-family:Naskh;font-weight:700;font-size:54px}
-.tk .n{font-family:Plex;font-weight:600;font-size:96px;line-height:1;direction:ltr;letter-spacing:1px}
+.tk .w{font-family:Tajawal;font-weight:700;font-size:62px}
+.tk .n{font-family:TajawalT;font-weight:600;font-size:110px;line-height:1;direction:ltr;letter-spacing:1px}
 .ct{position:absolute;left:70px;right:70px;bottom:92px;display:flex;align-items:center;justify-content:center;gap:44px;direction:rtl}
 .ct .it{display:flex;align-items:center;gap:16px}
 .ct .ic{width:60px;height:60px;border-radius:50%;background:var(--mid);display:flex;align-items:center;justify-content:center;flex:none}
 .ct .ic svg{width:32px;height:32px}
-.ct .k{font-family:Plex;font-weight:500;font-size:19px;color:#6E8B77;line-height:1.2}
-.ct .v{font-family:Plex;font-weight:600;font-size:32px;line-height:1.25;direction:ltr;text-align:right}
+.ct .k{font-family:TajawalT;font-weight:500;font-size:22px;color:#6E8B77;line-height:1.2}
+.ct .v{font-family:TajawalT;font-weight:600;font-size:37px;line-height:1.25;direction:ltr;text-align:right}
 .ct .v.ph{word-spacing:-4px;letter-spacing:1px}
-.ct .v.em{font-size:25px;font-weight:500}
+.ct .v.em{font-size:29px;font-weight:500}
 .ct .sep{width:1.5px;height:70px;background:var(--gold);opacity:.7}
 .stripes{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;gap:7px}
 .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
 .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+.tag{margin-top:10px !important}
 </style></head><body><div class="ad">
   <img class="plane" src="../../08-الصور/طائرة العراقية 777 - المقدمة (مفرغة، مكبّرة 3x).png" alt="">
   <div class="head">
@@ -77,5 +84,10 @@ svg.deco{position:absolute;inset:0}
   </div>
   <div class="stripes"><i></i><i></i></div>
 </div>
-<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script>
+<script>
+// stretch the agent line to the exact width of logo + name (Tajawal widths differ from the old measured setup)
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ if(t&&l){t.style.transform='none';let ws=0;for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}}
+ document.body.dataset.ready='1'});
+</script>
 </body></html>

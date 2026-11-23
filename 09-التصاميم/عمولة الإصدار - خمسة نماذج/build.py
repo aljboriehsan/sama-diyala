@@ -149,5 +149,8 @@ D['5 - الشروق'] = page('الشروق', '''
 
 for name, html in D.items():
     d = f'{OUT}/{name}'; os.makedirs(d, exist_ok=True)
+    import importlib.util as _u
+    _sp = _u.spec_from_file_location('tj', '07-أدوات/tajawal.py'); _tj = _u.module_from_spec(_sp); _sp.loader.exec_module(_tj)
+    html = _tj.convert(html, '../../../07-أدوات/خطوط', 1.15)   # house font Tajawal (from 23 Nov 2026)
     open(f'{d}/إعلان.html', 'w').write(html)
 print('\n'.join(D))
