@@ -1,0 +1,78 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>خمن الوجهة</title><style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;
+  --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:#fff;
+  background:radial-gradient(90% 55% at 50% 38%,#1f6c42 0%,#0E4D2C 55%,#083a1f 100%)}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+.head{position:absolute;top:48px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.tag{opacity:1}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(201,164,76,.16) 1.4px,transparent 1.6px);background-size:28px 28px;
+  -webkit-mask:radial-gradient(60% 45% at 50% 45%,transparent 40%,#000 100%)}
+.ttl{position:absolute;top:196px;left:0;right:0;text-align:center}
+.ttl h1{font-family:Naskh;font-weight:700;font-size:104px;line-height:1.1}
+.ttl h1 span{color:var(--gold)}
+.ttl p{font-family:Plex;font-weight:500;font-size:32px;color:#E9F2EA;margin-top:4px}
+.pass{position:absolute;left:70px;right:70px;top:400px;height:300px;display:flex;direction:rtl;filter:drop-shadow(0 20px 40px rgba(0,0,0,.3))}
+.pass .m{flex:1;background:#fff;color:var(--green);border-radius:0 24px 24px 0;padding:30px 40px;
+  -webkit-mask:radial-gradient(circle at 0 0,transparent 20px,#000 20.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 20px,#000 20.5px) bottom/100% 51% no-repeat}
+.pass .s{width:200px;background:var(--gold);color:var(--green);border-radius:24px 0 0 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  -webkit-mask:radial-gradient(circle at 100% 0,transparent 20px,#000 20.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 20px,#000 20.5px) bottom/100% 51% no-repeat}
+.pass .s img{height:70px} .pass .s b{font-family:Naskh;font-weight:700;font-size:40px;line-height:1}
+.pass .cut{width:0;border-right:3px dashed #d9e5dc;margin:26px 0;background:#fff}
+.rt{display:flex;align-items:center;justify-content:space-between}
+.rt .p{display:flex;flex-direction:column;align-items:center}
+.rt .c{font-family:Plex;font-weight:600;font-size:58px;line-height:1;letter-spacing:2px}
+.rt .n{font-family:Plex;font-weight:500;font-size:20px;color:#6E8B77;margin-top:8px}
+.rt .ln{flex:1;margin:0 22px;height:2px;background-image:radial-gradient(circle,#C9A44C 1.6px,transparent 2px);background-size:14px 2px;position:relative}
+.rt .ln svg{position:absolute;left:50%;top:50%;width:40px;height:40px;transform:translate(-50%,-50%) scaleX(-1);color:#C9A44C;background:#fff;padding:4px}
+.fl{display:flex;gap:6px;direction:ltr}
+.fl i{font-style:normal;width:56px;height:74px;border-radius:8px;background:linear-gradient(180deg,#145a35 0 49%,#0E4D2C 51%);color:var(--gold);
+  font-family:Plex;font-weight:600;font-size:52px;display:flex;align-items:center;justify-content:center;position:relative}
+.fl i::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#062a17}
+.fs{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.f .k{font-family:Plex;font-size:18px;color:#6E8B77;margin-bottom:4px}
+.f .v{font-family:Plex;font-weight:600;font-size:28px}
+.cds{position:absolute;left:70px;right:70px;top:740px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cd{position:relative;background:rgba(255,255,255,.07);border:1.5px solid rgba(201,164,76,.45);border-radius:22px;padding:34px 16px 26px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.cd .no{position:absolute;top:-20px;right:50%;transform:translateX(50%);width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--green);
+  font-family:Plex;font-weight:600;font-size:24px;display:flex;align-items:center;justify-content:center}
+.cd .ic{width:84px;height:84px;color:var(--gold)} .cd .ic svg{width:100%;height:100%}
+.ct2{margin-top:14px;font-family:Plex;font-weight:600;font-size:28px;line-height:1.35}
+.cta{position:absolute;left:0;right:0;top:1052px;text-align:center}
+.cta .b{display:inline-block;background:#fff;color:var(--green);border-radius:999px;padding:14px 46px 18px;font-family:Plex;font-weight:600;font-size:36px}
+.cta .b span{color:var(--dgold)}
+.cta p{margin-top:14px;font-family:Plex;font-weight:500;font-size:26px;color:#E9F2EA;opacity:.9}
+.wa{position:absolute;left:0;right:0;bottom:62px;display:flex;justify-content:center;align-items:center;gap:12px;direction:ltr;font-family:Plex;font-weight:500;font-size:28px;letter-spacing:1px;word-spacing:-4px}
+.wa svg{width:30px;height:30px;color:var(--gold)}
+.stripes{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;gap:7px}
+.stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+.stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+</style></head><body><div class="ad"><div class="dots"></div>
+<div class="head"><div class="brand" id="brand"><div class="lockup" id="lockup"><img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="name">سماء ديالى</div></div>
+<div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div></div></div>
+<div class="ttl"><h1>خمّن <span>الوجهة</span></h1><p>ثلاث تلميحات… وين رايحين؟</p></div>
+<div class="pass"><div class="m">
+ <div class="rt"><div class="p"><span class="c">BGW</span><span class="n">بغداد</span></div><div class="ln"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 15.2v-1.9l-8-5V3.5a1.5 1.5 0 0 0-3 0v4.8l-8 5v1.9l8-2.5v5.3l-2 1.5V21l3.5-1 3.5 1v-1.5l-2-1.5v-5.3z" transform="rotate(-90 12 12)"/></svg></div><div class="p"><span class="fl"><i>?</i><i>?</i><i>?</i></span><span class="n">الوجهة</span></div></div>
+ <div class="fs"><div class="f"><div class="k">المسافر</div><div class="v">أنت</div></div><div class="f"><div class="k">المقعد</div><div class="v" style="direction:ltr;text-align:right">12A</div></div><div class="f"><div class="k">الجواب</div><div class="v">باچر</div></div></div>
+</div><div class="cut"></div><div class="s"><img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt=""><b>خمّن</b></div></div>
+<div class="cds"><div class="cd"><span class="no">1</span><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 34h40M12 12v28M36 12v28M4 28c5 0 8-6 8-16M44 28c-5 0-8-6-8-16M12 12c5 12 19 12 24 0M18 34v-9M24 34v-7M30 34v-9"/></svg></span><div class="ct2">جسر يربط<br>قارتين</div></div><div class="cd"><span class="no">2</span><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 11h20a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V15a4 4 0 0 1 4-4zM10 24h28M18 36l-4 6M30 36l4 6M19 4h10M24 4v7M16.5 30.5h.01M31.5 30.5h.01"/></svg></span><div class="ct2">ترام أحمر<br>بشارع ما يهدأ</div></div><div class="cd"><span class="no">3</span><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.6 27h12.8c.6 1.2.9 2.3.9 3.2 0 4-3.3 6.3-7.3 6.3s-7.3-2.3-7.3-6.3c0-.9.3-2 .9-3.2z" fill="currentColor" fill-opacity=".4" stroke="none"/><path d="M18 11h12c0 5-3 7-3 10.5 0 3 4.5 5 4.5 9 0 4.2-3.3 6.5-7.5 6.5s-7.5-2.3-7.5-6.5c0-4 4.5-6 4.5-9 0-3.5-3-5.5-3-10.5z"/><ellipse cx="24" cy="41" rx="13" ry="3"/><path d="M21 3.5c-1.2 1.5 1.2 2.5 0 4.5M27 3.5c-1.2 1.5 1.2 2.5 0 4.5"/></svg></span><div class="ct2">شاي بكوب<br>زجاج صغير</div></div></div>
+<div class="cta"><div class="b">اكتب جوابك <span>بالتعليقات</span> 👇</div><p>والجواب باچر بالستوري</p></div>
+<div class="wa"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>077 0006 9900</span></div>
+<div class="stripes"><i></i><i></i></div></div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
