@@ -6,16 +6,16 @@ L = os.path.join(R, '14-الفيديو/مقاطع/المكتب')
 FPS, W, H = 30, 1080, 1920
 # (clip, start, dur, gain dB, blur boxes [x,y,w,h,radius]) — boxes hide booking data on screen/tickets
 segs = [
- ('المكتب - الحجز على الكيبورد.mov',        0.60, 3.0, 10, [(0, 0, 1080, 930, 22)]),
- ('المكتب - الطابعة تخرج التذكرة.mov',     0.25, 2.0, 6,  [(330, 880, 600, 560, 7)]),
- ('المكتب - ختم التذكرة.mov',              0.95, 1.6, 7,  [(160, 620, 760, 520, 6)]),
+ ('المكتب - الحجز على الكيبورد.mov',        0.60, 3.0, 10, [('mask', 'عناصر/قناع الشاشة.png', 20)]),
+ ('المكتب - الطابعة تخرج التذكرة.mov',     0.25, 2.0, 6,  [(400, 1030, 420, 280, 7)]),
+ ('المكتب - ختم التذكرة.mov',              0.95, 1.6, 7,  [(330, 630, 440, 140, 6), (160, 770, 790, 150, 6)]),
  ('المكتب - وضع التذكرة في الغلاف.mov',    2.20, 1.6, 11, []),
  ('المكتب - تسليم التذكرة للزبون.mov',     0.00, 1.6, 11, []),
  ('المكتب - جولة في القاعة وجدار العراقية.mov', 2.40, 4.4, 4, []),
 ]
 MUSIC = os.path.join(R, '14-الفيديو/موسيقى/leberch-travel-documentary-519393.mp3'); M_START = 96.8
 total = sum(s[2] for s in segs); t_end = total - 2.2
-inp, fv, fa = [], [], []
+inp, fv, fa, masks = [], [], [], []
 for i, (f, ss, d, g, boxes) in enumerate(segs):
     inp += ['-ss', str(ss), '-t', str(d + 0.15), '-i', os.path.join(L, f)]
     n = int(round(d * FPS))
@@ -23,7 +23,14 @@ for i, (f, ss, d, g, boxes) in enumerate(segs):
     if boxes:
         fv.append(v + f',split={len(boxes)+1}[b{i}' + ''.join(f'][c{i}_{k}' for k in range(len(boxes))) + ']')
         cur = f'b{i}'
-        for k, (x, y, w, h, r) in enumerate(boxes):
+        for k, b in enumerate(boxes):
+            if b[0] == 'mask':   # blur only inside a feathered mask image (white = blurred)
+                masks.append((f'm{i}_{k}', os.path.join(D, b[1])))
+                fv.append(f'[c{i}_{k}]boxblur={b[2]}:2,format=rgba[bl{i}_{k}]')
+                fv.append(f'[bl{i}_{k}][{{m{i}_{k}}}]alphamerge[bm{i}_{k}]')
+                fv.append(f'[{cur}][bm{i}_{k}]overlay=0:0[o{i}_{k}]'); cur = f'o{i}_{k}'
+                continue
+            x, y, w, h, r = b
             fv.append(f'[c{i}_{k}]crop={w}:{h}:{x}:{y},boxblur={r}:2[bl{i}_{k}]')
             fv.append(f'[{cur}][bl{i}_{k}]overlay={x}:{y}[o{i}_{k}]'); cur = f'o{i}_{k}'
         fv.append(f'[{cur}]trim=end_frame={n},setpts=PTS-STARTPTS[v{i}]')
@@ -38,6 +45,9 @@ hook = k; endc = k + 1; mus = k + 2
 inp += ['-loop', '1', '-t', str(total), '-i', os.path.join(D, 'عناصر/البداية.png'),
         '-loop', '1', '-t', str(total), '-i', os.path.join(D, 'عناصر/الختام.png'),
         '-ss', str(M_START), '-t', str(total - t_end + 0.2), '-i', MUSIC]
+for j, (tag, path) in enumerate(masks):
+    inp += ['-loop', '1', '-t', str(total), '-i', path]
+    fv[:] = [x.replace('{' + tag + '}', f'{mus + 1 + j}:v') for x in fv]
 fv.append(f'[{hook}:v]format=rgba,fade=t=out:st=2.75:d=0.25:alpha=1[hk]')
 fv.append(f'[{endc}:v]format=rgba,fade=t=in:st={t_end}:d=0.45:alpha=1[ec]')
 fv.append(f"[base][hk]overlay=0:0:enable='lt(t,3.0)'[b1]")
