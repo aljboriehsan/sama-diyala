@@ -13,7 +13,7 @@
   @font-face{font-family:Plex;font-weight:600;src:url("../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
 
   :root{
-    --kick-dx:132.4px;
+    --kick-dx:140.3px;
     --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
     --ink:#0E4D2C;          /* single logo/text colour, chosen per background */
     --accent:#A8862F;   /* price colour */
@@ -92,9 +92,25 @@
   .wa .ph{word-spacing:-3px}
   .wa svg{width:28px;height:28px;flex:none}
   .wa span{font-family:Plex;font-weight:500;font-size:25px;letter-spacing:1px}
-  .dest{font-size:150px !important;line-height:1.05 !important;margin-top:2px !important}
-  .kicker{margin-top:22px !important;color:#0E4D2C !important;font-weight:600 !important}
-  .price{margin-top:16px !important}
+  .dest{font-size:136px !important;line-height:1.05 !important;margin-top:0 !important}
+  .kicker{margin-top:30px !important;color:#0E4D2C !important;font-weight:600 !important}
+  .price{margin-top:10px !important}
+  /* bigger text throughout (header lockup and 20px agent line stay as measured) */
+  .kicker{font-size:40px !important}
+  .price .from{font-size:31px !important;padding-top:18px !important}
+  .price .cur{font-size:40px !important}
+  .pass{height:262px !important}
+  .route{gap:12px !important}
+  .route .code{font-size:44px !important}
+  .route .city{font-size:21px !important}
+  .route svg{width:78px !important;margin-top:16px !important}
+  .fields{margin-top:30px !important}
+  .f .k{font-size:21px !important}
+  .f .v{font-size:29px !important}
+  .stubx .k{font-size:21px !important}
+  .stubx ul{font-size:25px !important;line-height:1.6 !important}
+  .wa span{font-size:31px !important}
+  .wa svg{width:33px !important;height:33px !important}
 </style>
 </head>
 <body>
@@ -123,7 +139,7 @@
       </div>
       <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
     </div>
-    <div class="kicker">من أربيل · ذهاب وإياب</div>
+    <div class="kicker">أربيل – دبي – أربيل</div>
     <div class="dest">دبي</div>
     <div class="price">
       <span class="from">ابتداءً من</span>
@@ -145,6 +161,8 @@
       <div class="row1">
         <img class="bplogo" src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
         <div class="route">
+          <div><div class="code">EBL</div><div class="city">أربيل</div></div>
+          <svg viewBox="0 0 120 14"><line x1="18" y1="7" x2="118" y2="7" stroke="#C9A44C" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/><path d="M2 7 L17 1 L13 7 L17 13 Z" fill="#C9A44C"/></svg>
           <div><div class="code">DXB</div><div class="city">دبي</div></div>
           <svg viewBox="0 0 120 14"><line x1="18" y1="7" x2="118" y2="7" stroke="#C9A44C" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/><path d="M2 7 L17 1 L13 7 L17 13 Z" fill="#C9A44C"/></svg>
           <div><div class="code">EBL</div><div class="city">أربيل</div></div>
@@ -158,7 +176,7 @@
     </div>
     <div class="stubx">
       <div class="k">التذكرة</div>
-      <ul><li>ذهاب وإياب</li><li>أربيل ⇄ دبي</li></ul>
+      <ul><li>ذهاب وإياب</li><li>أربيل – دبي – أربيل</li></ul>
     </div>
   </div>
   <div class="stripes"><i></i><i></i></div>
