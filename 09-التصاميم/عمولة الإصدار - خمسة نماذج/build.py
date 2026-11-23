@@ -22,7 +22,7 @@ def contacts(dark, bottom=86):
     c = '#fff' if dark else '#0E4D2C'; k = 'rgba(233,242,234,.75)' if dark else '#6E8B77'
     icbg = '#C9A44C' if dark else '#2F7A41'; icc = '#0E4D2C' if dark else '#fff'
     return f'''<div class="ct" style="bottom:{bottom}px;color:{c}">
-<div class="it"><span class="ic" style="background:{icbg};color:{icc}">{WA}</span><div><div class="k" style="color:{k}">للإصدار والاستفسار</div><div class="v ph">077 0006 9900</div></div></div>
+<div class="it"><span class="ic" style="background:{icbg};color:{icc}">{WA}</span><div><div class="k" style="color:{k}">للإصدار والاستفسار</div><div class="v ph">077 0006 9900</div><div class="v ph">077 0756 4440</div></div></div>
 <div class="sep"></div>
 <div class="it"><span class="ic" style="background:{icbg};color:{icc}">{EM}</span><div><div class="k" style="color:{k}">البريد الإلكتروني</div><div class="v em">samaa_dyala1@yahoo.com</div></div></div></div>'''
 
@@ -64,7 +64,7 @@ D['2 - المكتب'] = page('المكتب', '''
 .ad{background:#0E4D2C;color:#fff}
 .bgph{position:absolute;left:-1010px;top:-40px;height:1440px}
 .sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,24,.78) 0%,rgba(8,40,24,.25) 22%,rgba(8,40,24,0) 34%,rgba(8,40,24,.15) 48%,rgba(10,58,33,.88) 64%,#0b4026 78%)}
-.txt{position:absolute;top:842px;left:0;right:0;text-align:center}
+.txt{position:absolute;top:790px;left:0;right:0;text-align:center}
 .greet{font-size:48px;color:var(--gold)} .ttl{font-size:84px} .sub{font-size:30px;color:#E9F2EA;margin-top:4px}
 .comm{margin-top:14px;display:inline-flex;align-items:center;gap:18px}
 .comm .w{font-family:Naskh;font-weight:700;font-size:58px}
