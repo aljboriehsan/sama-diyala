@@ -1,0 +1,66 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>الرقم الكبير</title><style>
+  @font-face{font-family:Naskh;font-weight:700;src:url("../../../07-أدوات/خطوط/noto-naskh-arabic-arabic-700-normal.woff2")}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-400-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:400;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-400-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-600-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Plex;font-weight:600;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-600-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;
+  --lock-dx:-1.9px; --name-dy:22px; --tag-size:20px; --tag-ws:0.72px; --tag-dx:0.4px;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+.ad{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Naskh;font-weight:700;font-size:54px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  .tag{margin:12px auto 0;width:max-content;font-family:Plex;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+.head{position:absolute;left:0;right:0;display:flex;flex-direction:column;align-items:center;z-index:5}
+.tag{opacity:1}
+.ct{position:absolute;left:60px;right:60px;display:flex;align-items:center;justify-content:center;gap:40px;direction:rtl;z-index:5}
+.ct .it{display:flex;align-items:center;gap:16px}
+.ct .ic{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.ct .ic svg{width:32px;height:32px}
+.ct .k{font-family:Plex;font-weight:500;font-size:19px;line-height:1.2}
+.ct .v{font-family:Plex;font-weight:600;font-size:32px;line-height:1.25;direction:ltr;text-align:right}
+.ct .v.ph{word-spacing:-4px;letter-spacing:1px}
+.ct .v.em{font-size:25px;font-weight:500}
+.ct .sep{width:1.5px;height:70px;background:var(--gold);opacity:.7}
+.stripes{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;gap:7px;z-index:5}
+.stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+.stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+.greet{font-family:Naskh;font-weight:700;line-height:1.15}
+.ttl{font-family:Naskh;font-weight:700;line-height:1.15}
+.sub{font-family:Plex;font-weight:500}
+
+.ad{background:radial-gradient(90% 60% at 50% 45%,#1d6a40 0%,#0E4D2C 55%,#083a1f 100%);color:#fff}
+.txt{position:absolute;top:236px;left:0;right:0;text-align:center}
+.greet{font-size:52px;color:var(--gold)} .ttl{font-size:86px;margin-top:2px}
+.big{position:absolute;left:0;right:0;top:500px;text-align:center;font-family:Plex;font-weight:600;font-size:330px;line-height:1;color:var(--gold);direction:ltr;letter-spacing:-4px;
+  text-shadow:0 18px 50px rgba(0,0,0,.25)}
+.lbl{position:absolute;left:0;right:0;top:860px;text-align:center}
+.lbl .a{display:inline-block;font-family:Plex;font-weight:600;font-size:34px;color:#0E4D2C;background:#E9F2EA;border-radius:999px;padding:10px 34px 13px}
+.lbl .b{margin-top:16px;font-family:Plex;font-weight:500;font-size:30px;color:#E9F2EA}
+.plane{position:absolute;left:610px;top:404px;width:420px;filter:drop-shadow(0 14px 18px rgba(0,0,0,.3))}
+.trail{position:absolute;inset:0}
+.ring{position:absolute;left:50%;top:675px;width:760px;height:760px;margin:-380px 0 0 -380px;border-radius:50%;border:1.5px solid rgba(201,164,76,.28)}
+</style></head><body><div class="ad">
+<div class="head" style="top:52px;color:#fff"><div class="brand" id="brand"><div class="lockup" id="lockup">
+<img src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="name">سماء ديالى</div></div>
+<div class="tag" id="tag" style="color:#fff">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div></div></div>
+<div class="ring"></div>
+<div class="txt"><div class="greet">صباح الخير</div><div class="ttl">يمكنكم الإصدار الآن</div></div>
+<div class="big">6.5%</div>
+<svg class="trail" viewBox="0 0 1080 1350"><path d="M40 610 C 260 580, 420 560, 650 500" fill="none" stroke="#C9A44C" stroke-opacity=".7" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/></svg>
+<img class="plane" src="../../../08-الصور/طائرة العراقية YI-ASU (مفرغة).png" alt="">
+<div class="lbl"><div class="a">عمولة إصدار</div><div class="b">تذاكر الخطوط الجوية العراقية</div></div>
+<div class="ct" style="bottom:86px;color:#fff">
+<div class="it"><span class="ic" style="background:#C9A44C;color:#0E4D2C"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></span><div><div class="k" style="color:rgba(233,242,234,.75)">للإصدار والاستفسار</div><div class="v ph">077 0006 9900</div></div></div>
+<div class="sep"></div>
+<div class="it"><span class="ic" style="background:#C9A44C;color:#0E4D2C"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.2 7 12 11.5 18.8 7H5.2z"/></svg></span><div><div class="k" style="color:rgba(233,242,234,.75)">البريد الإلكتروني</div><div class="v em">samaa_dyala1@yahoo.com</div></div></div></div>
+<div class="stripes"><i></i><i></i></div></div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
