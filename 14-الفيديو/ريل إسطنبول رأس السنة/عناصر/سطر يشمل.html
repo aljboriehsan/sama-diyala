@@ -1,9 +1,26 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
-@font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+FB50-FDFF,U+FE70-FEFF}
-@font-face{font-family:Plex;font-weight:500;src:url("../../../07-أدوات/خطوط/ibm-plex-sans-arabic-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
 html,body{margin:0;width:1080px;height:1920px;background:transparent;overflow:hidden}
 .cap{position:absolute;left:0;right:0;bottom:430px;display:flex;justify-content:center}
-.cap span{font-family:Plex;font-weight:500;font-size:38px;line-height:1.35;color:#fff;padding:10px 30px 13px;border-radius:14px;background:rgba(0,0,0,.48);display:flex;align-items:center;gap:14px}
+.cap span{font-family:TajawalT;font-weight:500;font-size:43px;line-height:1.35;color:#fff;padding:10px 30px 13px;border-radius:14px;background:rgba(0,0,0,.48);display:flex;align-items:center;gap:14px}
 .cap span:before{content:"";width:12px;height:12px;border-radius:50%;background:#C9A44C;flex:none}
+.tag{margin-top:10px !important}
 </style></head><body><div class="cap"><span>__T__</span></div>
-<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
+<script>
+// stretch the agent line to the exact width of logo + name (Tajawal widths differ from the old measured setup)
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ if(t&&l){t.style.transform='none';let ws=0;for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}}
+ document.body.dataset.ready='1'});
+</script></body></html>
