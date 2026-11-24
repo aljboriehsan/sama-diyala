@@ -1,0 +1,64 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>مصر بلا فيزا</title><style>
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;--lock-dx:-1.9px;--name-dy:4px;--tag-size:23px;--tag-ws:0.72px;--tag-dx:0px}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#E9F2EA}
+.ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:#0E4D2C}
+.photo{position:absolute;left:0;right:0;bottom:0;height:745px;background:url("../../08-الصور/وجهات/مصر - الأهرامات والجمل (الأصل).jpg") 58% 100%/auto 745px no-repeat}
+.fade{position:absolute;left:0;right:0;top:604px;height:250px;background:linear-gradient(180deg,#E9F2EA 0%,rgba(233,242,234,.85) 35%,rgba(233,242,234,0) 100%)}
+.top{position:absolute;inset:0 0 auto 0;height:606px;background:#E9F2EA}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:64px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+  .tag{margin-top:10px !important}
+.head{position:absolute;top:46px;left:0;right:0;display:flex;flex-direction:column;align-items:center;z-index:3}
+.tag{opacity:1;color:#2F7A41;margin-top:10px !important}
+.news{position:absolute;top:232px;right:0;left:150px;height:96px;background:var(--green);border-radius:48px 0 0 48px;display:flex;align-items:center;justify-content:center;gap:18px;color:#fff;
+  font-family:Tajawal;font-weight:700;font-size:58px;z-index:3}
+.news svg{width:44px;height:44px}
+.news::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:6px;background:var(--gold);border-radius:3px 0 0 3px;margin-left:40px}
+.card{position:absolute;top:378px;left:70px;right:70px;background:#fff;border-radius:34px;padding:34px 30px 38px;text-align:center;box-shadow:0 16px 40px rgba(14,77,44,.16);z-index:3}
+.card h1{font-family:Tajawal;font-weight:700;font-size:118px;line-height:1.1;color:var(--green)}
+.card h1 span{color:var(--dgold)}
+.card p{margin-top:12px;font-family:TajawalT;font-weight:700;font-size:40px;line-height:1.35;color:var(--mid)}
+.note{position:absolute;top:720px;left:50%;transform:translateX(-50%);white-space:nowrap;background:rgba(14,77,44,.92);color:#fff;border:3px solid #E9F2EA;border-radius:999px;
+  padding:14px 40px 18px;font-family:TajawalT;font-weight:500;font-size:34px;z-index:3;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.note b{color:var(--gold);font-weight:700}
+.bar{position:absolute;left:40px;right:40px;bottom:40px;height:110px;border-radius:26px;background:rgba(14,77,44,.92);display:flex;align-items:center;justify-content:space-around;color:#fff;z-index:3;
+  backdrop-filter:blur(8px)}
+.bar .it{display:flex;align-items:center;gap:14px;direction:ltr;font-family:TajawalT;font-weight:700;font-size:38px;letter-spacing:1px;word-spacing:-5px}
+.bar svg{width:40px;height:40px;color:var(--gold)}
+.bar .sep{width:2px;height:60px;background:var(--gold);opacity:.7}
+.stripes{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px;z-index:3}
+.stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+.stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+</style></head><body><div class="ad">
+<div class="photo"></div><div class="top"></div><div class="fade"></div>
+<div class="head"><div class="brand" id="brand"><div class="lockup" id="lockup"><img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt=""><div class="name">سماء ديالى</div></div>
+<div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div></div></div>
+<div class="news"><svg viewBox="0 0 24 24" fill="#C9A44C"><path d="M12 2l2.4 6.6L21 9.3l-5.2 4.3 1.8 6.9L12 16.7l-5.6 3.8 1.8-6.9L3 9.3l6.6-.7z"/></svg>بشرى للمسافرين</div>
+<div class="card"><h1>مصر <span>بلا فيزا</span></h1><p>قرار جديد يعفي العراقيين<br>من فيزا السفر إلى مصر</p></div>
+<div class="note"><b>ملاحظة:</b> القرار بانتظار موعد التطبيق</div>
+<div class="bar"><div class="it"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>077 0756 4440</span></div><div class="sep"></div><div class="it"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg><span>077 0006 9900</span></div></div>
+<div class="stripes"><i></i><i></i></div>
+</div>
+<script>
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ t.style.transform='none'; let ws=0; for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width; if(Math.abs(d)<0.5)break; ws+=d/5*0.9; t.style.wordSpacing=ws+'px';}
+ document.body.dataset.ready='1'});
+</script>
+</body></html>
