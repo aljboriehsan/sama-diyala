@@ -32,7 +32,7 @@ CAPS = [
  (10.15, 13.75, 'شرّفنا بموقع الشركة في بعقوبة<br>قرب كراج البحيرة'),
  (14.15, 17.45, 'أو احجز وادفع وانت ببيتك<br>من أي محافظة'),
 ]
-MUSIC = os.path.join(R, '14-الفيديو/موسيقى/leberch-travel-documentary-519393.mp3'); TRACK_END = 100.05
+MUSIC = os.path.join(R, '14-الفيديو/موسيقى/lexin_music-inspiring-cinematic-ambient-116199.mp3'); M_START = 5.0   # calm ambient bed under the voice (asked by Ihsan)
 CACHE = os.path.join(D, '.cache'); os.makedirs(CACHE, exist_ok=True)
 
 # --- layers: end card frames and caption PNGs
@@ -87,7 +87,7 @@ def add(args):
 endc = add(['-framerate', str(FPS), '-i', os.path.join(FR, '%04d.png')])
 caps_i = [add(['-loop', '1', '-t', str(total), '-i', p]) for p in cap_png]
 vo_i = add(['-i', VO])
-mus_i = add(['-ss', str(TRACK_END - total - 0.1), '-t', str(total + 0.2), '-i', MUSIC])
+mus_i = add(['-ss', str(M_START), '-t', str(total + 0.2), '-i', MUSIC])
 for tag, path in masks:
     j = add(['-loop', '1', '-t', str(total), '-i', path])
     fv[:] = [x.replace('{' + tag + '}', f'{j}:v') for x in fv]
@@ -102,8 +102,8 @@ fv.append(f"[{cur}][ec]overlay=0:0:eof_action=repeat,format=yuv420p[vout]")
 vo_end = VO_AT + 21.74
 fa.append(f"[orig]volume=0.32[od]")                                         # office sounds low under the voice
 fa.append(f'[{vo_i}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(VO_AT*1000)}|{int(VO_AT*1000)},volume=1.0[vo]')
-fa.append(f"[{mus_i}:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:st=0:d=0.6,"
-          f"volume='if(lt(t,{vo_end:.2f}),0.14,0.14+0.36*min(1,(t-{vo_end:.2f})/0.5))':eval=frame[mu]")   # light bed, rises after the last word
+fa.append(f"[{mus_i}:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:st=0:d=0.8,"
+          f"volume='if(lt(t,{vo_end:.2f}),0.24,0.24+0.36*min(1,(t-{vo_end:.2f})/0.6))':eval=frame,afade=t=out:st={total-1.4:.2f}:d=1.4[mu]")   # audible calm bed under the voice (~-24 LUFS), rises after the last word, fades out at the end
 fa.append('[od][vo][mu]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.89[aout]')
 
 out = os.path.join(D, 'تذكرتك تطلع بدقيقة - إعلان بالصوت 9x16.mp4')
