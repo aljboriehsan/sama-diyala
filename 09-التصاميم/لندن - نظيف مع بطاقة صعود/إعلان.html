@@ -28,8 +28,8 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1080px;height:1350px;overflow:hidden;background:#0d2a3a}
   .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
-  .photo{position:absolute;inset:0;background:url("../../08-الصور/وجهات/لندن - بيغ بن والتاكسي والباص (سماء ممدودة للإعلان).jpg") 0 0/1080px auto no-repeat}
-  .shade-top{position:absolute;inset:0 0 auto 0;height:720px;background:linear-gradient(180deg,rgba(10,20,40,.50) 0%,rgba(10,20,40,.40) 55%,rgba(10,20,40,.18) 80%,rgba(10,20,40,0) 100%)}
+  .photo{position:absolute;inset:0;background:url("../../08-الصور/وجهات/لندن - بيغ بن والتاكسي والباص (طريق ممدود للإعلان).jpg") -38px -752px/1335px auto no-repeat}
+  .shade-top{position:absolute;inset:0 0 auto 0;height:760px;background:linear-gradient(180deg,rgba(10,20,40,.66) 0%,rgba(10,20,40,.62) 58%,rgba(10,20,40,.42) 76%,rgba(10,20,40,0) 100%)}
   .collage{position:absolute;inset:0;display:block}
   .shade-bot{position:absolute;inset:auto 0 0 0;height:520px;
              background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
@@ -119,6 +119,10 @@
   .price{margin-top:20px !important}
   .pass{height:285px !important}
   .plane{position:absolute;left:40px;top:650px;width:330px;height:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18))}
+  .kicker{transform:none !important;font-size:32px !important;margin-top:2px !important;line-height:1.1 !important}
+  .fromc{margin-top:22px;font-family:Tajawal;font-weight:700;font-size:60px;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+  .dest{font-size:150px !important;margin-top:-6px !important}
+  .price{margin-top:6px !important}
 </style>
 </head>
 <body>
@@ -127,22 +131,6 @@
   <div class="shade-top"></div>
 
   <div class="shade-bot"></div>
-  <svg class="plane" viewBox="0 0 420 120" aria-hidden="true">
-    <defs><linearGradient id="trail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".75"/></linearGradient>
-      <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfd6de"/></linearGradient></defs>
-    <g transform="rotate(-11 210 60)">
-      <rect x="0" y="62" width="228" height="2.2" rx="1" fill="url(#trail)"/>
-      <rect x="20" y="68" width="208" height="1.6" rx="1" fill="url(#trail)" opacity=".7"/>
-      <g transform="translate(222 40)">
-        <path d="M14 22 L5 2 L17 2 L36 22 Z" fill="url(#body)"/>
-        <path d="M12 28 L2 36 L12 36 L32 30 Z" fill="#c7ced6"/>
-        <path d="M10 22 H168 C182 22 192 26 192 28 C192 31 182 34 168 34 H18 C12 34 8 31 8 28 C8 25 9 22 10 22 Z" fill="url(#body)"/>
-        <path d="M88 30 L64 52 L78 52 L116 31 Z" fill="#dfe4ea"/>
-        <ellipse cx="96" cy="38" rx="10" ry="4" fill="#b9c1ca"/>
-        <path d="M176 25 C182 25.5 186 26.5 188 28 L176 28 Z" fill="#5d6b7a"/>
-      </g>
-    </g>
-  </svg>
 
 
   <div class="head">
@@ -153,7 +141,8 @@
       </div>
       <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
     </div>
-    <div class="kicker">رحلات جديدة من بغداد</div>
+    <div class="fromc">من بغداد</div>
+    <div class="kicker">إلى</div>
     <div class="dest">لندن</div>
     <div class="price">
       <span class="from">تبدأ الرحلات</span>
