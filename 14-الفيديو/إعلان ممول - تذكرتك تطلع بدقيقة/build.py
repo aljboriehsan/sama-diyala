@@ -22,7 +22,7 @@ MUSIC = os.path.join(R, '14-الفيديو/موسيقى/leberch-travel-documenta
 total = sum(s[2] for s in segs); t_end = total - EC
 FR = os.path.join(D, '.cache/end_frames')
 subprocess.run(['node', os.path.join(R, '07-أدوات/فيديو/render_anim.js'), os.path.join(D, 'عناصر/الختام.html'), FR, str(EC), str(FPS)], check=True)
-subprocess.run(['node', os.path.join(R, '07-أدوات/فيديو/render_anim.js'), os.path.join(D, 'عناصر/البداية.html'), os.path.join(D, '.cache/hook'), '0.04', '25'], check=True)
+subprocess.run(['node', os.path.join(R, '07-أدوات/فيديو/render_anim.js'), os.path.join(D, 'عناصر/البداية.html'), os.path.join(D, '.cache/hook'), '3.0', str(FPS)], check=True)
 inp, fv, fa, masks = [], [], [], []
 for i, (f, ss, d, g, boxes, *rest) in enumerate(segs):
     src_end = rest[0] if rest else None
@@ -57,15 +57,15 @@ k = len(segs)
 fv.append(''.join(f'[v{i}]' for i in range(k)) + f'concat=n={k}:v=1:a=0[base]')
 fa.append(''.join(f'[a{i}]' for i in range(k)) + f'concat=n={k}:v=0:a=1[orig]')
 hook = k; endc = k + 1; mus = k + 2
-inp += ['-loop', '1', '-t', str(total), '-i', os.path.join(D, '.cache/hook/0000.png'),
+inp += ['-framerate', str(FPS), '-i', os.path.join(D, '.cache/hook/%04d.png'),
         '-framerate', str(FPS), '-i', os.path.join(FR, '%04d.png'),
         '-ss', str(M_START), '-t', str(total - t_end + 0.2), '-i', MUSIC]
 for j, (tag, path) in enumerate(masks):
     inp += ['-loop', '1', '-t', str(total), '-i', path]
     fv[:] = [x.replace('{' + tag + '}', f'{mus + 1 + j}:v') for x in fv]
-fv.append(f'[{hook}:v]format=rgba,fade=t=out:st=2.75:d=0.25:alpha=1[hk]')
+fv.append(f'[{hook}:v]format=rgba,setpts=PTS-STARTPTS[hk]')   # line 2 and the fade-out are inside the animation
 fv.append(f'[{endc}:v]format=rgba,setpts=PTS-STARTPTS+{t_end}/TB[ec]')   # fades are inside the animation
-fv.append(f"[base][hk]overlay=0:0:enable='lt(t,3.0)'[b1]")
+fv.append(f"[base][hk]overlay=0:0:eof_action=pass:enable='lt(t,3.0)'[b1]")
 fv.append(f"[b1][ec]overlay=0:0:eof_action=repeat,format=yuv420p[vout]")
 # the office ambience dips under the music; music fades in with the end card and ends with the track
 fa.append(f"[orig]volume='if(gte(t,{t_end}),0.35,1)':eval=frame[od]")
