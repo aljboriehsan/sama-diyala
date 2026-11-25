@@ -91,8 +91,6 @@ D['3 - الرقم الكبير'] = page('الرقم الكبير', '''
 <div class="ring"></div>
 <div class="txt"><div class="greet">صباح الخير</div><div class="ttl">يمكنكم الإصدار الآن</div></div>
 <div class="big">{COMMISSION}</div>
-<svg class="trail" viewBox="0 0 1080 1350"><path d="M40 610 C 260 580, 420 560, 650 500" fill="none" stroke="#C9A44C" stroke-opacity=".7" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round"/></svg>
-<img class="plane" src="{R}08-الصور/طائرة العراقية YI-ASU (مفرغة).png" alt="">
 <div class="lbl"><div class="a">عمولة إصدار</div><div class="b">تذاكر الخطوط الجوية العراقية</div></div>
 ''' + contacts(True))
 

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>عمولة الإصدار - فاتح</title>
+<style>
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+@font-face{font-family:TajawalT;font-weight:800;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C;--dgold:#A8862F;--light:#E9F2EA;
+  --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#fff}
+.ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--green);
+  background:radial-gradient(70% 45% at 50% 46%,#ffffff 0%,#f8fbf8 55%,#eef4ef 100%)}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:62px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+.head{position:absolute;top:52px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.tag{opacity:1;color:var(--mid)}
+.txt{position:absolute;top:222px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center}
+.greet{font-family:Tajawal;font-weight:700;font-size:57px;line-height:1.15;color:var(--dgold)}
+.ttl{margin-top:2px;font-family:Tajawal;font-weight:700;font-size:99px;line-height:1.15}
+.sub{margin-top:8px;font-family:TajawalT;font-weight:500;font-size:34px;color:var(--mid)}
+svg.deco{position:absolute;inset:0}
+.plane{position:absolute;left:30px;top:515px;width:1030px;filter:drop-shadow(0 26px 30px rgba(14,77,44,.16))}
+/* commission as a boarding-pass stub */
+.tk{position:absolute;left:50%;top:922px;transform:translateX(-50%);display:flex;height:150px;direction:rtl;filter:drop-shadow(0 10px 22px rgba(168,134,47,.28))}
+.tk .a{background:var(--gold);color:var(--green);border-radius:20px 0 0 20px;display:flex;align-items:center;gap:18px;padding:0 46px 0 40px;
+  -webkit-mask:radial-gradient(circle at 100% 0,transparent 15px,#000 15.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 15px,#000 15.5px) bottom/100% 51% no-repeat}
+.tk .b{background:var(--green);color:#fff;border-radius:0 20px 20px 0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 34px;
+  font-family:TajawalT;font-weight:600;font-size:28px;line-height:1.3;border-left:2.5px dashed rgba(233,242,234,.0);
+  -webkit-mask:radial-gradient(circle at 0 0,transparent 15px,#000 15.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 15px,#000 15.5px) bottom/100% 51% no-repeat}
+.tk .b small{font-weight:500;font-size:22px;color:#9FC2A6}
+.tk .cut{width:0;border-right:2.5px dashed #E9F2EA;margin:16px 0}
+.tk .w{font-family:Tajawal;font-weight:700;font-size:62px}
+.tk .n{font-family:TajawalT;font-weight:600;font-size:110px;line-height:1;direction:ltr;letter-spacing:1px}
+.ct{position:absolute;left:70px;right:70px;bottom:92px;display:flex;align-items:center;justify-content:center;gap:44px;direction:rtl}
+.ct .it{display:flex;align-items:center;gap:16px}
+.ct .ic{width:60px;height:60px;border-radius:50%;background:var(--mid);display:flex;align-items:center;justify-content:center;flex:none}
+.ct .ic svg{width:32px;height:32px}
+.ct .k{font-family:TajawalT;font-weight:500;font-size:22px;color:#6E8B77;line-height:1.2}
+.ct .v{font-family:TajawalT;font-weight:600;font-size:37px;line-height:1.25;direction:ltr;text-align:right}
+.ct .v.ph{word-spacing:-4px;letter-spacing:1px}
+.ct .v.em{font-size:29px;font-weight:500}
+.ct .sep{width:1.5px;height:70px;background:var(--gold);opacity:.7}
+.stripes{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;gap:7px}
+.stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+.stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+.tag{margin-top:10px !important}
+.v.ph+.v.ph{margin-top:2px}
+
+.ad{background:#cfdbe6}
+.bgp{position:absolute;inset:0;background:url("../../../08-الصور/لقطات طائرات العراقية (من المقاطع)/777 تقلع كاملة في السماء.png") 50% -150px/1080px auto no-repeat}
+.sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.72) 0%,rgba(255,255,255,.55) 30%,rgba(255,255,255,0) 44%,rgba(255,255,255,0) 64%,rgba(255,255,255,.55) 80%,rgba(255,255,255,.8) 100%)}
+.tk{top:930px !important}
+
+</style></head><body><div class="ad">
+  <div class="bgp"></div><div class="sh"></div>
+  <div class="head">
+    <div class="brand" id="brand">
+      <div class="lockup" id="lockup">
+        <img src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
+        <div class="name">سماء ديالى</div>
+      </div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
+    </div>
+  </div>
+  <div class="txt">
+    <div class="greet">صباح الخير</div>
+    <div class="ttl">يمكنكم الإصدار الآن</div>
+    <div class="sub">تذاكر الخطوط الجوية العراقية</div>
+  </div>
+  <div class="tk"><div class="a"><span class="w">بعمولة</span><span class="n">6.5%</span></div><div class="cut"></div><div class="b"><img src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="" style="height:58px"></div></div>
+  <div class="ct">
+    <div class="it"><span class="ic"><svg viewBox="0 0 32 32" fill="#fff"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.900-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></span><div><div class="k">للإصدار والاستفسار</div><div class="v ph">077 0006 9900</div><div class="v ph">077 0756 4440</div></div></div>
+    <div class="sep"></div>
+    <div class="it"><span class="ic"><svg viewBox="0 0 24 24" fill="#fff"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm1 2.4V17h16V7.4l-8 5.3-8-5.3zM5.2 7 12 11.5 18.8 7H5.2z"/></svg></span><div><div class="k">البريد الإلكتروني</div><div class="v em">samaa_dyala1@yahoo.com</div></div></div>
+  </div>
+  <div class="stripes"><i></i><i></i></div>
+</div>
+<script>
+// stretch the agent line to the exact width of logo + name (Tajawal widths differ from the old measured setup)
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ if(t&&l){t.style.transform='none';let ws=0;for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}}
+ document.body.dataset.ready='1'});
+</script>
+</body></html>
