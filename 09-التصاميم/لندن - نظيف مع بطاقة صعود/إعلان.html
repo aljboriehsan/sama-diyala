@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<title>لندن - نظيف مع بطاقة صعود</title>
+<title>لندن - صورة الباص</title>
 <style>
   @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
   @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
@@ -19,8 +19,8 @@
   :root{
     --kick-dx:37.1px;
     --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
-    --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
-    --accent:var(--gold);   /* price colour */
+    --ink:#0E4D2C;          /* single logo/text colour, chosen per background */
+    --accent:#A8862F;   /* price colour */
     --img-y:0px;
     --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
     /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
@@ -28,8 +28,8 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html,body{width:1080px;height:1350px;overflow:hidden;background:#0d2a3a}
   .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
-  .photo{position:absolute;left:0;top:0;width:1080px;height:700px;background:url("../../08-الصور/وجهات/لندن - كولاج (أجزاء)/sky.jpg") 0 0/1080px 700px no-repeat}
-  .shade-top{position:absolute;inset:0 0 auto 0;height:720px;background:linear-gradient(180deg,rgba(14,12,40,.58) 0%,rgba(14,12,40,.52) 55%,rgba(14,12,40,.30) 78%,rgba(14,12,40,0) 100%)}
+  .photo{position:absolute;inset:0;background:url("../../08-الصور/وجهات/لندن - الباص الأحمر وبرج فيكتوريا (الأصل).jpg") 50% 0/1166px auto no-repeat}
+  .shade-top{position:absolute;inset:0 0 auto 0;height:700px;background:radial-gradient(ellipse 620px 400px at 50% 370px,rgba(255,255,255,.72) 0%,rgba(255,255,255,.5) 58%,rgba(255,255,255,0) 100%),linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,.32) 60%,rgba(255,255,255,0) 100%)}
   .collage{position:absolute;inset:0;display:block}
   .shade-bot{position:absolute;inset:auto 0 0 0;height:520px;
              background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
@@ -47,14 +47,14 @@
        white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
 
   .dest{margin-top:30px;font-family:Tajawal;font-weight:700;font-size:139px;line-height:1.05;
-        text-shadow:0 2px 24px rgba(0,0,0,.25)}
+        text-shadow:0 2px 24px rgba(255,255,255,.4)}
   .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
   .price .from{font-family:TajawalT;font-weight:500;font-size:28px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
   .price .num{font-family:TajawalT;font-weight:600;font-size:113px;line-height:1;direction:ltr;letter-spacing:1px}
   .price .cur{font-family:TajawalT;font-weight:500;font-size:35px;position:relative;top:-10px}
   .airline{margin-top:10px;font-family:TajawalT;font-weight:500;font-size:26px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
   .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
-  .kicker{width:max-content;transform:translateX(var(--kick-dx,212px));margin-top:44px;font-family:TajawalT;font-weight:500;font-size:35px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,212px));margin-top:44px;font-family:TajawalT;font-weight:500;font-size:35px;line-height:1.2;color:#A8862F;letter-spacing:.5px}
   .kicker + .dest{margin-top:10px}
   /* boarding pass at the bottom */
   .pass{position:absolute;left:56px;right:56px;bottom:108px;height:226px;display:flex;direction:rtl;
@@ -124,26 +124,13 @@
 <div class="ad">
   <div class="photo"></div>
   <div class="shade-top"></div>
-  <svg class="collage" viewBox="0 0 1080 1350" width="1080" height="1350">
-    <defs>
-      <clipPath id="cA"><polygon points="0,670.0 367,649.6111111111111 337,1350 0,1350"/></clipPath>
-      <clipPath id="cB"><polygon points="377,649.0555555555555 733,629.2777777777778 703,1350 347,1350"/></clipPath>
-      <clipPath id="cC"><polygon points="743,628.7222222222222 1080,610.0 1080,1350 713,1350"/></clipPath>
-    </defs>
-    <polygon points="0,670.0 1080,610.0 1080,1350 0,1350" fill="#C9A44C"/>
-    <image href="../../08-الصور/وجهات/لندن - كولاج (أجزاء)/p1.jpg" x="-10" y="610.0" width="392" height="740.0" preserveAspectRatio="xMidYMin slice" clip-path="url(#cA)"/>
-    <image href="../../08-الصور/وجهات/لندن - كولاج (أجزاء)/p2.jpg" x="330" y="629.0555555555555" width="420" height="720.9444444444445" preserveAspectRatio="xMidYMin slice" clip-path="url(#cB)"/>
-    <image href="../../08-الصور/وجهات/لندن - كولاج (أجزاء)/p3.jpg" x="700" y="598.7222222222222" width="390" height="751.2777777777778" preserveAspectRatio="xMidYMin slice" clip-path="url(#cC)"/>
-    <polygon points="0,652.0 1080,592.0 1080,600.0 0,660.0" fill="#2F7A41"/>
-    <polygon points="0,660.0 1080,600.0 1080,606.0 0,666.0" fill="#C9A44C"/>
-  </svg>
 
   <div class="shade-bot"></div>
 
   <div class="head">
     <div class="brand" id="brand">
       <div class="lockup" id="lockup">
-        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
         <div class="name">سماء ديالى</div>
       </div>
       <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
