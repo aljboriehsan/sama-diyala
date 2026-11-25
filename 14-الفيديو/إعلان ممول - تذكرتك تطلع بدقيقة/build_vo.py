@@ -8,7 +8,7 @@ import subprocess, os, json
 D = os.path.dirname(os.path.abspath(__file__)); R = os.path.dirname(os.path.dirname(D))
 L = os.path.join(R, '14-الفيديو/مقاطع/المكتب')
 FPS, W, H = 30, 1080, 1920
-VO = os.path.join(D, 'صوت/الفويس أوفر 2 - منظف.wav')   # 2nd recording (25 Nov), cleaned + de-reverbed (07-أدوات/صوت/dereverb.py)
+VO = os.path.join(D, 'صوت/الفويس أوفر 2 - الأصل مع إزالة الضجيج فقط.wav')   # 2nd recording as recorded: light afftdn + 5 dB gain only (Ihsan rejected the de-reverb/compression chain)
 VO_SS, VO_AT = 1.05, 0.35   # skip the lead-in of the file; the voice starts 0.35 s into the video (first frame is the full façade)
 VO_LAST = 21.43             # end of the last word, in file time
 # (clip, start, dur, gain dB, blur boxes, source end for a slowed tail)
@@ -105,7 +105,7 @@ vo_end = VO_AT + VO_LAST - VO_SS
 fa.append(f"[orig]volume=0.32[od]")                                         # office sounds low under the voice
 fa.append(f'[{vo_i}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(VO_AT*1000)}|{int(VO_AT*1000)},volume=1.0[vo]')
 fa.append(f"[{mus_i}:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:st=0:d=0.8,"
-          f"volume='if(lt(t,{vo_end:.2f}),0.24,0.24+0.36*min(1,(t-{vo_end:.2f})/0.6))':eval=frame,afade=t=out:st={total-1.4:.2f}:d=1.4[mu]")   # audible calm bed under the voice (~-24 LUFS), rises after the last word, fades out at the end
+          f"volume='if(lt(t,{vo_end:.2f}),0.15,0.15+0.3*min(1,(t-{vo_end:.2f})/0.6))':eval=frame,afade=t=out:st={total-1.4:.2f}:d=1.4[mu]")   # audible calm bed under the voice (~-24 LUFS), rises after the last word, fades out at the end
 fa.append('[od][vo][mu]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.89[aout]')
 
 out = os.path.join(D, 'تذكرتك تطلع بدقيقة - إعلان بالصوت 9x16.mp4')
