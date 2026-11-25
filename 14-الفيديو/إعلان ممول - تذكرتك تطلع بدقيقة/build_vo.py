@@ -28,8 +28,7 @@ EC = round(total - t_end, 2)
 segs.append(('المكتب - جولة في القاعة وجدار العراقية (بديلة).mov', 3.50, EC, 4, [], 8.75))   # rest of the pan, slightly slowed, under the end card
 # captions: (start, end, text) in video time = voice-over phrase times + VO_AT
 CAPS = [   # video time = file time - 0.70
- (0.40, 2.28, 'تذكرتك تطلع بدقيقة'),
- (2.28, 6.45, 'من شركة سماء ديالى<br>الوكيل العام للخطوط الجوية العراقية في ديالى'),
+ (3.00, 6.45, 'من شركة سماء ديالى<br>الوكيل العام للخطوط الجوية العراقية في ديالى'),
  (6.88, 9.20, 'حجزك مضمون، وبالأسعار الرسمية'),
  (9.55, 13.30, 'شرّفنا بموقع الشركة في بعقوبة<br>قرب كراج البحيرة'),
  (13.45, 16.70, 'أو احجز وادفع وانت ببيتك<br>من أي محافظة'),
@@ -39,6 +38,8 @@ CACHE = os.path.join(D, '.cache'); os.makedirs(CACHE, exist_ok=True)
 
 # --- layers: end card frames and caption PNGs
 FR = os.path.join(CACHE, 'end_frames_vo')
+HK = os.path.join(CACHE, 'hook_vo')   # opening hook on the façade, 0–3 s (asked by Ihsan)
+subprocess.run(['node', os.path.join(R, '07-أدوات/فيديو/render_anim.js'), os.path.join(D, 'عناصر/البداية.html'), HK, '3.0', str(FPS)], check=True)
 subprocess.run(['node', os.path.join(R, '07-أدوات/فيديو/render_anim.js'), os.path.join(D, 'عناصر/الختام.html'), FR, str(EC), str(FPS)], check=True)
 tpl = open(os.path.join(D, 'عناصر/ترجمة.html')).read()
 cap_png = []
@@ -87,6 +88,7 @@ def add(args):
     global nxt
     inp.extend(args); nxt += 1; return nxt - 1
 endc = add(['-framerate', str(FPS), '-i', os.path.join(FR, '%04d.png')])
+hook = add(['-framerate', str(FPS), '-i', os.path.join(HK, '%04d.png')])
 caps_i = [add(['-loop', '1', '-t', str(total), '-i', p]) for p in cap_png]
 vo_i = add(['-ss', str(VO_SS), '-i', VO])
 mus_i = add(['-ss', str(M_START), '-t', str(total + 0.2), '-i', MUSIC])
@@ -94,7 +96,9 @@ for tag, path in masks:
     j = add(['-loop', '1', '-t', str(total), '-i', path])
     fv[:] = [x.replace('{' + tag + '}', f'{j}:v') for x in fv]
 
-cur = 'base'
+fv.append(f'[{hook}:v]format=rgba,setpts=PTS-STARTPTS[hk]')
+fv.append("[base][hk]overlay=0:0:eof_action=pass:enable='lt(t,3.0)'[bh]")
+cur = 'bh'
 for j, ((a, b, _), ci) in enumerate(zip(CAPS, caps_i)):
     fv.append(f'[{ci}:v]format=rgba,fade=t=in:st={a}:d=0.12:alpha=1,fade=t=out:st={b-0.12}:d=0.12:alpha=1[cp{j}]')
     fv.append(f"[{cur}][cp{j}]overlay=0:0:enable='between(t,{a},{b})'[cv{j}]"); cur = f'cv{j}'
