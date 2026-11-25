@@ -8,29 +8,31 @@ import subprocess, os, json
 D = os.path.dirname(os.path.abspath(__file__)); R = os.path.dirname(os.path.dirname(D))
 L = os.path.join(R, '14-الفيديو/مقاطع/المكتب')
 FPS, W, H = 30, 1080, 1920
-VO = os.path.join(D, 'صوت/الفويس أوفر - منظف.wav'); VO_AT = 0.4   # voice-over starts 0.4 s in (first frame is the full façade)
+VO = os.path.join(D, 'صوت/الفويس أوفر 2 - منظف.wav')   # 2nd recording (25 Nov), cleaned + de-reverbed (07-أدوات/صوت/dereverb.py)
+VO_SS, VO_AT = 1.05, 0.35   # skip the lead-in of the file; the voice starts 0.35 s into the video (first frame is the full façade)
+VO_LAST = 21.43             # end of the last word, in file time
 # (clip, start, dur, gain dB, blur boxes, source end for a slowed tail)
 segs = [
- ('المكتب - الواجهة من الخارج والدخول.mov',  0.00, 6.6, 0,  []),     # "تذكرتك تطلع بدقيقة، من شركة سماء ديالى…"
- ('المكتب - الحجز على الكيبورد.mov',         0.60, 1.4, 10, [('mask', 'عناصر/قناع الشاشة.png', 20)]),  # "حجزك مضمون…"
- ('المكتب - الطابعة تخرج التذكرة.mov',      0.25, 1.2, 6,  [(400, 1030, 420, 280, 7)]),
- ('المكتب - ختم التذكرة.mov',               0.95, 1.4, 7,  [(330, 630, 440, 140, 6), (160, 770, 790, 150, 6)]),
- ('المكتب - وضع التذكرة في الغلاف.mov',     2.20, 1.4, 11, []),     # "شرّفنا بموقع الشركة…"
- ('المكتب - تسليم التذكرة للزبون.mov',      0.00, 1.8, 11, []),
- ('المكتب - جولة في القاعة وجدار العراقية (بديلة).mov', 0.00, 3.7, 4, []),   # "أو احجز وادفع وانت ببيتك…"
+ ('المكتب - الواجهة من الخارج والدخول.mov',  0.00, 6.6, 0,  []),     # "تذكرتك تطلع بدقيقة، من شركة سماء ديالى…" (cut in the pause 6.39–6.92)
+ ('المكتب - الحجز على الكيبورد.mov',         0.60, 1.0, 10, [('mask', 'عناصر/قناع الشاشة.png', 20)]),  # "حجزك مضمون…"
+ ('المكتب - الطابعة تخرج التذكرة.mov',      0.25, 0.85, 6, [(400, 1030, 420, 280, 7)]),
+ ('المكتب - ختم التذكرة.mov',               0.95, 0.9, 7,  [(330, 630, 440, 140, 6), (160, 770, 790, 150, 6)]),
+ ('المكتب - وضع التذكرة في الغلاف.mov',     2.20, 1.6, 11, []),     # "شرّفنا بموقع الشركة…" (from 9.35)
+ ('المكتب - تسليم التذكرة للزبون.mov',      0.00, 2.4, 11, []),
+ ('المكتب - جولة في القاعة وجدار العراقية (بديلة).mov', 0.00, 3.5, 4, []),   # "أو احجز وادفع وانت ببيتك…" (13.35–16.85)
 ]
 t_end = sum(s[2] for s in segs)                    # end card starts here (17.5 s), under "تواصل ويانا…"
 vo_len = float(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', VO], capture_output=True, text=True).stdout)
-total = round(VO_AT + 21.74 + 1.5, 2)              # last word ends at 21.74 s in the recording, then 1.5 s of end card
+total = round(VO_AT + VO_LAST - VO_SS + 1.6, 2)     # 1.6 s of end card after the last word
 EC = round(total - t_end, 2)
-segs.append(('المكتب - جولة في القاعة وجدار العراقية (بديلة).mov', 3.70, EC, 4, [], 8.75))   # rest of the pan, slightly slowed, under the end card
+segs.append(('المكتب - جولة في القاعة وجدار العراقية (بديلة).mov', 3.50, EC, 4, [], 8.75))   # rest of the pan, slightly slowed, under the end card
 # captions: (start, end, text) in video time = voice-over phrase times + VO_AT
-CAPS = [
- (0.45, 1.95, 'تذكرتك تطلع بدقيقة'),
- (2.15, 6.40, 'من شركة سماء ديالى<br>الوكيل العام للخطوط الجوية العراقية في ديالى'),
- (6.85, 9.60, 'حجزك مضمون، وبالأسعار الرسمية'),
- (10.15, 13.75, 'شرّفنا بموقع الشركة في بعقوبة<br>قرب كراج البحيرة'),
- (14.15, 17.45, 'أو احجز وادفع وانت ببيتك<br>من أي محافظة'),
+CAPS = [   # video time = file time - 0.70
+ (0.40, 2.28, 'تذكرتك تطلع بدقيقة'),
+ (2.28, 6.45, 'من شركة سماء ديالى<br>الوكيل العام للخطوط الجوية العراقية في ديالى'),
+ (6.88, 9.20, 'حجزك مضمون، وبالأسعار الرسمية'),
+ (9.55, 13.30, 'شرّفنا بموقع الشركة في بعقوبة<br>قرب كراج البحيرة'),
+ (13.45, 16.70, 'أو احجز وادفع وانت ببيتك<br>من أي محافظة'),
 ]
 MUSIC = os.path.join(R, '14-الفيديو/موسيقى/lexin_music-inspiring-cinematic-ambient-116199.mp3'); M_START = 5.0   # calm ambient bed under the voice (asked by Ihsan)
 CACHE = os.path.join(D, '.cache'); os.makedirs(CACHE, exist_ok=True)
@@ -86,7 +88,7 @@ def add(args):
     inp.extend(args); nxt += 1; return nxt - 1
 endc = add(['-framerate', str(FPS), '-i', os.path.join(FR, '%04d.png')])
 caps_i = [add(['-loop', '1', '-t', str(total), '-i', p]) for p in cap_png]
-vo_i = add(['-i', VO])
+vo_i = add(['-ss', str(VO_SS), '-i', VO])
 mus_i = add(['-ss', str(M_START), '-t', str(total + 0.2), '-i', MUSIC])
 for tag, path in masks:
     j = add(['-loop', '1', '-t', str(total), '-i', path])
@@ -99,7 +101,7 @@ for j, ((a, b, _), ci) in enumerate(zip(CAPS, caps_i)):
 fv.append(f'[{endc}:v]format=rgba,setpts=PTS-STARTPTS+{t_end}/TB[ec]')
 fv.append(f"[{cur}][ec]overlay=0:0:eof_action=repeat,format=yuv420p[vout]")
 
-vo_end = VO_AT + 21.74
+vo_end = VO_AT + VO_LAST - VO_SS
 fa.append(f"[orig]volume=0.32[od]")                                         # office sounds low under the voice
 fa.append(f'[{vo_i}:a]aresample=48000,aformat=channel_layouts=stereo,adelay={int(VO_AT*1000)}|{int(VO_AT*1000)},volume=1.0[vo]')
 fa.append(f"[{mus_i}:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:st=0:d=0.8,"
