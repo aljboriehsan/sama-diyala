@@ -1,0 +1,59 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>شريط إضافتنا - لوحة العراقية</title>
+<style>
+/* Our strip under the Iraqi Airways billboard: 4 m × 1.5 m (1600×600 here, 1 px = 2.5 mm; exported ×5 = 8000×3000). */
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1600px;height:600px;overflow:hidden;background:#0E4D2C}
+.s{position:relative;width:1600px;height:600px;overflow:hidden;color:#fff;
+   background:radial-gradient(70% 120% at 20% 50%,#17633b 0%,#0E4D2C 55%,#0a3d22 100%)}
+.top{position:absolute;left:0;right:0;top:0;height:10px;background:var(--gold)}
+.top2{position:absolute;left:0;right:0;top:10px;height:8px;background:var(--mid)}
+/* slanted brand stripes, bottom-left corner */
+.st{position:absolute;left:-80px;bottom:30px;width:420px;height:16px;background:var(--mid);transform:rotate(-20deg);transform-origin:0 100%}
+.st.g{bottom:6px;height:7px;background:var(--gold)}
+/* right: our logo */
+.lg{position:absolute;right:50px;top:18px;bottom:0;width:340px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.lg img{width:230px;display:block}
+.lg .nm{margin-top:14px;font-family:Tajawal;font-weight:700;font-size:72px;line-height:1;white-space:nowrap}
+.dv{position:absolute;right:430px;top:70px;bottom:52px;width:4px;background:var(--gold);border-radius:2px;opacity:.85}
+/* left: message + numbers */
+.m{position:absolute;left:50px;right:460px;top:18px;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.t1{font-family:Tajawal;font-weight:700;font-size:62px;line-height:1.08;white-space:nowrap}
+.t2{margin-top:6px;font-family:Tajawal;font-weight:700;font-size:58px;line-height:1.1;color:var(--gold);white-space:nowrap}
+.wa{margin-top:30px;display:flex;align-items:center;gap:22px;direction:ltr}
+.wa .ic{width:112px;height:112px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.wa .ic svg{width:66px;height:66px}
+.wa .n{font-family:Tajawal;font-weight:700;font-size:122px;line-height:1;letter-spacing:2px;word-spacing:-18px;white-space:nowrap}
+.ph{margin-top:14px;display:flex;align-items:center;gap:16px;direction:ltr}
+.ph .ic{width:64px;height:64px;border-radius:50%;border:4px solid var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.ph .ic svg{width:34px;height:34px}
+.ph .ic svg path{fill:var(--gold)}
+.ph .n{font-family:Tajawal;font-weight:700;font-size:66px;line-height:1;letter-spacing:1px;word-spacing:-10px;white-space:nowrap}
+.ad{margin-top:18px;display:flex;align-items:center;gap:10px;font-family:TajawalT;font-weight:700;font-size:38px;white-space:nowrap}
+.ad svg{width:40px;height:40px;flex:none}
+.lic{position:absolute;left:28px;bottom:26px;background:var(--gold);color:var(--green);border-radius:12px;padding:8px 18px 10px;
+     font-family:TajawalT;font-weight:700;font-size:22px;line-height:1.2;text-align:center}
+</style></head><body><div class="s">
+<div class="top"></div><div class="top2"></div>
+<div class="lg"><img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="nm">سماء ديالى</div></div>
+<div class="dv"></div>
+<div class="m">
+  <div class="t1">الوكيل العام للخطوط الجوية العراقية</div>
+  <div class="t2">في محافظة ديالى</div>
+  <div class="wa"><span class="ic"><svg viewBox="0 0 32 32" fill="#0E4D2C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></span><span class="n">077 0006 9900</span></div>
+  <div class="ph"><span class="ic"><svg viewBox="0 0 24 24" fill="#0E4D2C"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></span><span class="n">077 0756 4440</span></div>
+  <div class="ad"><svg  viewBox="0 0 24 24" fill="#C9A44C"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>بعقوبة – قرب كراج البحيرة</span></div>
+</div>
+<div class="lic">الإعلان مجاز من قبل<br>بلدية بعقوبة</div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
