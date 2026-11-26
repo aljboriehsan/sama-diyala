@@ -20,6 +20,8 @@ step=np.clip(yy-top+0.5,0,1)
 Z=(xx>=330)&(xx<=1445)&(yy>=120)&(yy<=268)
 aZ=np.where(d<11,0,a)
 a2=a.copy(); a2[Z]=np.maximum(step,aZ)[Z]
+Zp=(xx>=300)&(xx<780)&(yy>=120)&(yy<=265)   # nothing but sky above the forward fuselage
+a2[Zp]=step[Zp]
 # wing leading edge: straight line fitted on the model mask, light edge strip kept
 lx=[];ly=[]
 for x in range(960,1390,4):
@@ -53,6 +55,17 @@ rf=np.clip(np.polyval(cr,yy)-xx+0.5,0,1)
 FZ2=(yy>=238)&(yy<243)&(xx>np.polyval(cl,yy)+4)&(xx<1800)
 a2[FZ2]=np.minimum(a2,rf)[FZ2]
 print('top',ct)
+# nose: smooth the ragged outline (white nose on light sky) by supersampled blur + threshold
+y0n,y1n,x0n,x1n=140,335,0,380
+sub=(a2[y0n:y1n,x0n:x1n]>0.5).astype(np.float32)
+S=4
+hi=cv2.resize(sub,None,fx=S,fy=S,interpolation=cv2.INTER_NEAREST)
+hi=cv2.GaussianBlur(hi,(0,0),4.5*S)
+hi=(hi>0.5).astype(np.float32)
+lo=cv2.resize(hi,(x1n-x0n,y1n-y0n),interpolation=cv2.INTER_AREA)
+w=np.clip((350-xx[y0n:y1n,x0n:x1n])/30,0,1)          # fade the fix out toward x=350
+w=np.minimum(w,np.clip((325-yy[y0n:y1n,x0n:x1n])/12,0,1))   # keep the nose gear untouched
+a2[y0n:y1n,x0n:x1n]=w*lo+(1-w)*a2[y0n:y1n,x0n:x1n]
 np.save('a2.npy',a2)
 F=estimate_foreground_ml(I,a2); np.save('F2.npy',F)
 G=np.array([14,77,44])/255
