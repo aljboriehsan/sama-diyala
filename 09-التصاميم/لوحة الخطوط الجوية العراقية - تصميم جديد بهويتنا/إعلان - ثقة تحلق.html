@@ -62,8 +62,6 @@ svg.sw{position:absolute;inset:0}
 </svg>
 <div class="ring"></div><div class="ring r2"></div>
 <img class="plane" src="طائرة YI-ASU (مفرغة مرتبة).png" alt="">
-<div class="hd"><div class="brand" id="brand"><div class="lockup" id="lockup"><img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="name">سماء ديالى</div></div>
-  <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div></div></div>
 <div class="txt">
   <div class="brd"><img src="../../06-مصادر-الشعار/العراقية/طائر العراقية - أبيض.png" alt=""><div class="dv"></div><span>Iraqi Airways</span></div>
   <div class="t1">الخطوط الجوية العراقية</div>
@@ -81,6 +79,6 @@ svg.sw{position:absolute;inset:0}
   </div>
 </div>
 </div>
-<script>document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');t.style.transform='none';let ws=0;
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'});(()=>{return;const t=document.getElementById('tag'),l=document.getElementById('lockup');t.style.transform='none';let ws=0;
  for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width;if(Math.abs(d)<0.5)break;ws+=d/5*0.9;t.style.wordSpacing=ws+'px';}
- document.body.dataset.ready='1'});</script></body></html>
+ })();</script></body></html>
