@@ -1,0 +1,53 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>لوحة العراقية 4×2م</title>
+<style>
+/* Billboard 4 m × 2 m = 1600×800 here (1 px = 2.5 mm), exported ×4 = 6400×3200.
+   Top: the Iraqi Airways ad at full width (its logo moved up beside the title, the empty bottom margin cut at y=595);
+   bottom 205px (~51 cm): our strip. */
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1600px;height:800px;overflow:hidden;background:#0a3d22}
+.b{position:relative;width:1600px;height:800px;overflow:hidden}
+.ia{position:absolute;left:0;top:0;width:1600px;height:595px;overflow:hidden;background:url("../أساس العراقية - بلا الشعار السفلي.png") 0 0/1600px 685px no-repeat}
+.ial{position:absolute;left:946px;top:56px;height:120px}
+.cs{position:absolute;left:1446px;top:494px;width:117px;height:71px;background:#fff;border-radius:8px;padding:2px;display:flex;flex-direction:column;box-shadow:0 2px 5px rgba(0,0,0,.28)}
+.cs .k{height:23px;display:flex;align-items:center;justify-content:center;font-family:TajawalT;font-weight:700;font-size:14.5px;color:#0d5839}
+.cs .v{flex:1;background:#0d5839;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:Tajawal;font-weight:700;font-size:39px;line-height:1;color:#fff}
+.st{position:absolute;left:0;right:0;top:595px;bottom:0;background:radial-gradient(60% 140% at 50% 0%,#156039 0%,#0E4D2C 60%,#0a3d22 100%);
+     display:flex;align-items:center;justify-content:space-between;padding:10px 40px 0;direction:rtl;color:#fff}
+.st::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--gold)}
+.st::after{content:"";position:absolute;left:0;right:0;top:6px;height:5px;background:var(--mid)}
+.br{display:flex;align-items:center;gap:22px}
+.sd{height:132px;display:block}
+.tx .n1{font-family:Tajawal;font-weight:700;font-size:70px;line-height:1.05;white-space:nowrap}
+.tx .n2{margin-top:4px;font-family:Tajawal;font-weight:700;font-size:32px;line-height:1.18;color:var(--gold);white-space:nowrap}
+.vs{width:3px;height:130px;background:var(--gold);opacity:.8;border-radius:2px}
+.ph{display:flex;flex-direction:column;align-items:center;gap:12px}
+.wa{display:flex;align-items:center;gap:16px;direction:ltr}
+.wa .ic{width:86px;height:86px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.wa .ic svg{width:52px;height:52px}
+.wa .n{font-family:Tajawal;font-weight:700;font-size:92px;line-height:1;letter-spacing:1px;word-spacing:-14px;white-space:nowrap}
+.row{display:flex;align-items:center;gap:16px}
+.ad{display:flex;align-items:center;gap:6px;font-family:TajawalT;font-weight:600;font-size:22px;white-space:nowrap}
+.ad svg{width:23px;height:23px}
+.lic{background:var(--gold);color:var(--green);border-radius:8px;padding:4px 12px 6px;font-family:TajawalT;font-weight:700;font-size:17px;white-space:nowrap}
+</style></head><body><div class="b">
+<div class="ia"><img class="ial" src="../شعار العراقية - أبيض.png" alt="">
+  <div class="cs"><div class="k">خدمة الزبائن</div><div class="v">5511</div></div></div>
+<div class="st">
+  <div class="br"><img class="sd" src="../../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt=""><div class="tx"><div class="n1">شركة سماء ديالى</div><div class="n2">الوكيل العام للخطوط الجوية العراقية<br>في محافظة ديالى</div></div></div>
+  <div class="vs"></div>
+  <div class="ph"><div class="wa"><span class="ic"><svg viewBox="0 0 32 32" fill="#0E4D2C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></span><span class="n">077 0006 9900</span></div>
+    <div class="row"><div class="lic">الإعلان مجاز من قبل بلدية بعقوبة</div><div class="ad"><svg  viewBox="0 0 24 24" fill="#C9A44C"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>بعقوبة – قرب كراج البحيرة</span></div></div></div>
+</div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
