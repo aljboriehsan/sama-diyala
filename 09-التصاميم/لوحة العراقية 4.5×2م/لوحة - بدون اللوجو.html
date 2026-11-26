@@ -1,0 +1,59 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>لوحة العراقية 4.5×2م</title>
+<style>
+/* Whole billboard 4.5 m × 2 m = 1800×800 here (1 px = 2.5 mm), exported ×4 = 7200×3200.
+   Top 1.6 m: the Iraqi Airways ad (whole, centred, height cropped ~8% from empty margins) framed by our green;
+   bottom 0.4 m: our strip. */
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{--green:#0E4D2C;--mid:#2F7A41;--gold:#C9A44C}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1800px;height:800px;overflow:hidden;background:#0a3d22}
+.b{position:relative;width:1800px;height:800px;overflow:hidden;background:linear-gradient(180deg,#0b4326,#08341d)}
+.ia{position:absolute;left:0;top:0;width:1800px;height:640px;overflow:hidden}
+.ia img{position:absolute;left:87.5px;top:-35px;width:1625px;height:695.7px}
+.edge{position:absolute;top:0;height:640px;width:3px;background:var(--gold)}
+.cs{position:absolute;left:1552.0px;top:521.6px;width:117px;height:71px;background:#fff;border-radius:8px;padding:2px;display:flex;flex-direction:column;box-shadow:0 2px 5px rgba(0,0,0,.28)}
+.cs .k{height:23px;display:flex;align-items:center;justify-content:center;font-family:TajawalT;font-weight:700;font-size:14.5px;color:#0d5839}
+.cs .v{flex:1;background:#0d5839;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:Tajawal;font-weight:700;font-size:39px;line-height:1;color:#fff}
+.st{position:absolute;left:0;right:0;top:640px;height:160px;background:radial-gradient(60% 140% at 50% 0%,#156039 0%,#0E4D2C 60%,#0a3d22 100%);
+     display:flex;align-items:center;justify-content:space-between;padding:8px 44px 0;direction:rtl;color:#fff}
+.st::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:var(--gold)}
+.st::after{content:"";position:absolute;left:0;right:0;top:5px;height:4px;background:var(--mid)}
+.br{display:flex;align-items:center;gap:16px}
+.br img{height:96px;display:block}
+.br .nm{font-family:Tajawal;font-weight:700;font-size:64px;line-height:1;white-space:nowrap;padding-bottom:6px}
+.vs{width:3px;height:104px;background:var(--gold);opacity:.8;border-radius:2px}
+.ag{text-align:center}
+.ag .a1{font-family:Tajawal;font-weight:700;font-size:37px;line-height:1.15;white-space:nowrap}
+.ag .a2{font-family:Tajawal;font-weight:700;font-size:31px;line-height:1.15;color:var(--gold);white-space:nowrap}
+.ag .a3{margin-top:6px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:TajawalT;font-weight:600;font-size:21px;white-space:nowrap;opacity:.95}
+.ag .a3 svg{width:22px;height:22px}
+.ph{display:flex;flex-direction:column;align-items:center}
+.wa{display:flex;align-items:center;gap:14px;direction:ltr}
+.wa .ic{width:72px;height:72px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;flex:none}
+.wa .ic svg{width:46px;height:46px}
+.wa .n{font-family:Tajawal;font-weight:700;font-size:74px;line-height:1;letter-spacing:1px;word-spacing:-12px;white-space:nowrap}
+.lic{margin-top:8px;font-family:TajawalT;font-weight:600;font-size:17px;color:var(--gold);white-space:nowrap}
+</style></head><body><div class="b">
+<div class="ia"><img src="أساس العراقية (منظف).png" alt="">
+  <div class="cs"><div class="k">خدمة الزبائن</div><div class="v">5511</div></div></div>
+<div class="edge" style="left:84.5px"></div><div class="edge" style="left:1712.5px"></div>
+<div class="st">
+  <div class="br"><div class="nm">سماء ديالى</div></div>
+  <div class="vs"></div>
+  <div class="ag"><div class="a1">الوكيل العام للخطوط الجوية العراقية</div><div class="a2">في محافظة ديالى</div>
+    <div class="a3"><svg  viewBox="0 0 24 24" fill="#C9A44C"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>بعقوبة – قرب كراج البحيرة</span></div></div>
+  <div class="vs"></div>
+  <div class="ph"><div class="wa"><span class="ic"><svg viewBox="0 0 32 32" fill="#0E4D2C"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg></span><span class="n">077 0006 9900</span></div>
+    <div class="lic">الإعلان مجاز من قبل بلدية بعقوبة</div></div>
+</div>
+</div>
+<script>document.fonts.ready.then(()=>{document.body.dataset.ready='1'})</script></body></html>
