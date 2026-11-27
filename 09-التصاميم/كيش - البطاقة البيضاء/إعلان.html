@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>لندن - بيغ بن</title>
+<style>
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:Tajawal;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:400;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-arabic-500-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:500;src:url("../../07-أدوات/خطوط/tajawal-latin-500-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-arabic-700-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:600;src:url("../../07-أدوات/خطوط/tajawal-latin-700-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-arabic-800-normal.woff2");unicode-range:U+0600-06FF,U+0750-077F,U+FB50-FDFF,U+FE70-FEFF,U+200C-200E}
+  @font-face{font-family:TajawalT;font-weight:700;src:url("../../07-أدوات/خطوط/tajawal-latin-800-normal.woff2");unicode-range:U+0000-00FF,U+2000-206F}
+
+
+  :root{
+    --kick-dx:37.1px;
+    --green:#0E4D2C; --mid:#2F7A41; --gold:#C9A44C; --light:#E9F2EA; --white:#FFFFFF;
+    --ink:#FFFFFF;          /* single logo/text colour, chosen per background */
+    --accent:var(--gold);   /* price colour */
+    --img-y:0px;
+    --lock-dx:-1.9px; --name-dy:4px; --tag-size:23px; --tag-ws:0.72px; --tag-dx:0.4px;   /* header fine-tuning */
+    /* --img-y: vertical position of the photo (1080 x 1620 after scaling) */
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1080px;height:1350px;overflow:hidden;background:#0d2a3a}
+  .ad{position:relative;width:1080px;height:1350px;overflow:hidden;color:var(--ink)}
+  .photo{position:absolute;inset:0;background:url("../../08-الصور/وجهات/كيش - منتجع فوق الماء (سماء ممدودة للإعلان).jpg") 50% 0/1080px auto no-repeat}
+  .shade-top{position:absolute;inset:0 0 auto 0;height:760px;background:linear-gradient(180deg,rgba(10,30,70,.46) 0%,rgba(10,30,70,.36) 45%,rgba(10,30,70,.30) 66%,rgba(10,30,70,0) 100%)}
+  .collage{position:absolute;inset:0;display:block}
+  .shade-bot{position:absolute;inset:auto 0 0 0;height:520px;
+             background:linear-gradient(0deg,rgba(4,10,26,.78) 0%,rgba(4,10,26,.35) 55%,rgba(4,10,26,0) 100%)}
+
+  /* ---- header ---- */
+  .head{position:absolute;top:58px;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+  .brand{display:inline-flex;flex-direction:column;align-items:stretch}
+  .lockup{display:flex;align-items:center;justify-content:center;gap:18px}
+  .lockup img{height:84px;display:block}
+  .lockup{transform:translateX(var(--lock-dx))}
+  .lockup .name{font-family:Tajawal;font-weight:700;font-size:64px;line-height:1;padding-bottom:8px;white-space:nowrap;
+                transform:translateY(var(--name-dy))}
+  /* tagline keeps 20px; it is stretched with kashida (+ a hair of word-spacing) to the ink width of logo + name */
+  .tag{margin:12px auto 0;width:max-content;font-family:TajawalT;font-weight:500;font-size:var(--tag-size);line-height:1.2;
+       white-space:nowrap;text-align:center;opacity:.92;word-spacing:var(--tag-ws);transform:translateX(var(--tag-dx))}
+
+  .dest{margin-top:30px;font-family:Tajawal;font-weight:700;font-size:139px;line-height:1.05;
+        text-shadow:0 2px 24px rgba(0,0,0,.25)}
+  .price{margin-top:2px;display:flex;align-items:baseline;gap:14px;color:var(--accent)}
+  .price .from{font-family:TajawalT;font-weight:500;font-size:28px;color:var(--ink);opacity:.9;align-self:center;padding-top:14px}
+  .price .num{font-family:TajawalT;font-weight:600;font-size:113px;line-height:1;direction:ltr;letter-spacing:1px}
+  .price .cur{font-family:TajawalT;font-weight:500;font-size:35px;position:relative;top:-10px}
+  .airline{margin-top:10px;font-family:TajawalT;font-weight:500;font-size:26px;opacity:.92;display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .airline::before,.airline::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
+  .kicker{width:max-content;transform:translateX(var(--kick-dx,212px));margin-top:44px;font-family:TajawalT;font-weight:500;font-size:35px;line-height:1.2;color:var(--gold);letter-spacing:.5px}
+  .kicker + .dest{margin-top:10px}
+  /* boarding pass at the bottom */
+  .pass{position:absolute;left:56px;right:56px;bottom:108px;height:226px;display:flex;direction:rtl;
+        filter:none}
+  .pass .main{flex:1;background:rgba(255,255,255,.66);backdrop-filter:blur(10px) saturate(1.1);-webkit-backdrop-filter:blur(10px);border-radius:0 22px 22px 0;padding:24px 34px 22px;color:var(--green);position:relative;border-left:2.5px dashed #BFD2C4;
+     -webkit-mask:radial-gradient(circle at 0 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at 0 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+  .pass .stubx{width:300px;background:rgba(14,77,44,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:22px 0 0 22px;padding:24px 28px;color:#FFFFFF;position:relative;
+     -webkit-mask:radial-gradient(circle at 100% 0,transparent 16px,#000 16.5px) top/100% 51% no-repeat,radial-gradient(circle at 100% 100%,transparent 16px,#000 16.5px) bottom/100% 51% no-repeat}
+  .pass .cut{width:0;position:relative;border-right:2.5px dashed #BFD2C4;background:#fff}
+  .pass .cut::before,.pass .cut::after{content:"";position:absolute;right:-17px;width:32px;height:32px;border-radius:50%;background:#2a2a35}
+  .pass .cut::before{top:-16px} .pass .cut::after{bottom:-16px}
+  .row1{display:flex;align-items:center;justify-content:space-between}
+  .bplogo{height:58px;display:block}
+  .bp{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;border-radius:999px;padding:6px 16px 8px;font-family:TajawalT;font-weight:500;font-size:21px}
+  .bp svg{width:17px;height:17px;color:var(--gold)}
+  .route{display:flex;align-items:flex-start;gap:16px;direction:ltr}
+  .route .code{font-family:TajawalT;font-weight:600;font-size:45px;letter-spacing:2px;line-height:1}
+  .route .city{font-family:TajawalT;font-size:19px;color:#6E8B77;margin-top:4px;text-align:center;direction:rtl}
+  .route svg{margin-top:13px;width:120px;height:14px}
+  .fields{margin-top:26px;display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px}
+  .f .k{font-family:TajawalT;font-size:19px;color:#6E8B77;margin-bottom:4px}
+  .f .v .sub{display:block;font-weight:500;font-size:21px;color:#3E6B4C}
+  .f .v{font-family:TajawalT;font-weight:600;font-size:26px;line-height:1.3;white-space:nowrap}
+  .stubx .k{font-family:TajawalT;font-size:19px;color:#9FC2A6;margin-bottom:10px}
+  .stubx ul{list-style:none;font-family:TajawalT;font-weight:500;font-size:22px;line-height:1.55}
+  .stubx li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:10px;vertical-align:middle}
+  .perf{margin-top:20px;width:440px;height:2px;
+        background-image:radial-gradient(circle,rgba(201,164,76,.85) 1.2px,transparent 1.6px);
+        background-size:12px 2px;background-repeat:repeat-x}
+
+  /* ---- footer ---- */
+  .foot{position:absolute;left:56px;right:56px;bottom:46px;color:#fff;display:flex;align-items:flex-end;justify-content:space-between}
+  .dur .from{font-family:TajawalT;font-weight:500;font-size:22px;opacity:.85;display:block;margin-bottom:2px}
+  .dur .val{font-family:TajawalT;font-weight:600;font-size:38px;line-height:1.2;white-space:nowrap}
+  .stripes{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:7px}
+  .stripes i{display:block;width:44px;height:6px;transform:skewX(-35deg);border-radius:1px}
+  .stripes i:nth-child(1){background:var(--gold)} .stripes i:nth-child(2){background:var(--mid)}
+  .wa{display:flex;align-items:center;gap:10px;direction:ltr;padding-bottom:3px}
+  .wa .ph{word-spacing:-3px}
+  .wa svg{width:28px;height:28px;flex:none}
+  .wa span{font-family:TajawalT;font-weight:500;font-size:30px;letter-spacing:1px}
+  .dest{font-size:160px !important;line-height:1.05 !important;margin-top:0 !important}
+  .kicker{margin-top:30px !important;font-weight:600 !important}
+  .price{margin-top:34px !important}
+  /* bigger text throughout (header lockup and 20px agent line stay as measured) */
+  .kicker{font-size:47px !important}
+  .price .from{font-size:37px !important;padding-top:18px !important}
+  .price .cur{font-size:47px !important}
+  .pass{height:262px !important}
+  .route{gap:12px !important}
+  .route .code{font-size:52px !important}
+  .route .city{font-size:25px !important}
+  .route svg{width:78px !important;margin-top:16px !important}
+  .fields{margin-top:30px !important}
+  .f .k{font-size:25px !important}
+  .f .v{font-size:34px !important}
+  .stubx .k{font-size:25px !important}
+  .stubx ul{font-size:30px !important;line-height:1.6 !important}
+  .wa span{font-size:37px !important}
+  .wa svg{width:33px !important;height:33px !important}
+  .tag{margin-top:10px !important}
+  .price{margin-top:20px !important}
+  .pass{height:285px !important}
+  .plane{position:absolute;left:40px;top:650px;width:330px;height:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18))}
+  .kicker{transform:none !important;font-size:32px !important;margin-top:2px !important;line-height:1.1 !important}
+  .fromc{margin-top:22px;font-family:Tajawal;font-weight:700;font-size:60px;line-height:1.1;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+  .dest{font-size:150px !important;margin-top:-6px !important}
+  .price{margin-top:6px !important}
+  /* "البطاقة البيضاء": no agent line, airline line under the destination, date inside the pass, all-white pass */
+  .tag{display:none !important}
+  .fromc{margin-top:30px !important}
+  .airl{margin-top:-2px;font-family:Tajawal;font-weight:700;font-size:92px;line-height:1.1;color:var(--gold);text-shadow:0 2px 22px rgba(0,0,0,.3)}
+  .perf{margin-top:16px !important}
+  .pass .stubx{background:rgba(255,255,255,.66) !important;color:var(--green) !important}
+  .stubx .k{color:#6E8B77 !important}
+  .f .v .sub{font-size:24px !important}
+  .fields{margin-top:20px !important}
+  /* Kish: price takes the airline line (gold, smaller than the destination) */
+  .airl{display:flex;align-items:baseline;justify-content:center;gap:14px;direction:rtl}
+  .airl .pf{font-family:TajawalT;font-weight:600;font-size:36px;color:#fff}
+  .airl .pn{font-family:Tajawal;font-weight:700;font-size:92px;direction:ltr}
+  .airl .pc{font-family:TajawalT;font-weight:600;font-size:42px}
+  .f .v .pre{display:block;font-weight:500;font-size:22px;color:#3E6B4C;margin-bottom:-2px}
+  .route svg.pl{width:40px !important;height:40px !important;margin-top:6px !important}
+  .shade-price{position:absolute;left:0;right:0;top:380px;height:300px;background:linear-gradient(180deg,rgba(12,28,66,0) 0%,rgba(12,28,66,.45) 40%,rgba(12,28,66,.40) 62%,rgba(12,28,66,0) 100%)}
+  .kicker + .dest,.dest{margin-top:14px !important}
+  .pass .stubx{width:312px !important}
+  .stubx ul{font-size:27px !important;line-height:1.55 !important}
+</style>
+</head>
+<body>
+<div class="ad">
+  <div class="photo"></div>
+  <div class="shade-top"></div><div class="shade-price"></div>
+
+  <div class="shade-bot"></div>
+
+
+  <div class="head">
+    <div class="brand" id="brand">
+      <div class="lockup" id="lockup">
+        <img src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أبيض.svg" alt="">
+        <div class="name">سماء ديالى</div>
+      </div>
+      <div class="tag" id="tag">الوكيــــــل العــــــام للخطــــــوط الجويــــــة العراقيـــــة</div>
+    </div>
+    <div class="fromc">من النجف</div>
+    <div class="kicker">إلى</div>
+    <div class="dest">كيش</div>
+    <div class="airl"><span class="pf">ابتداءً من</span><span class="pn">385,000</span><span class="pc">د.ع</span></div>
+    <div class="perf"></div>
+  </div>
+
+  <div class="foot">
+    <div class="wa"><svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span class="ph">077 0756 4440</span></div>
+    <div class="wa">
+      <svg viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.5-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.6.3-.8.3-1.4.2-1.6-.1-.1-.3-.2-.6-.3z"/></svg>
+      <span class="ph">077 4177 7500</span>
+    </div>
+  </div>
+  <div class="pass">
+    <div class="main">
+      <div class="row1">
+        <img class="bplogo" src="../../01-الشعار/أحادي بلا الاسم الصغير/الرمز - أخضر.svg" alt="">
+        <div class="route">
+          <div><div class="code">KIH</div><div class="city">كيش</div></div>
+          <svg viewBox="0 0 120 14"><line x1="4" y1="7" x2="116" y2="7" stroke="#C9A44C" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/></svg><svg class="pl" viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" fill="#0E4D2C" transform="rotate(-90 12 12)"/></svg><svg viewBox="0 0 120 14"><line x1="4" y1="7" x2="116" y2="7" stroke="#C9A44C" stroke-width="2.5" stroke-dasharray="3 6" stroke-linecap="round"/></svg>
+          <div><div class="code">NJF</div><div class="city">النجف</div></div>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="f"><div class="k">المدة</div><div class="v"><span class="pre">ابتداءً من</span>4 أيام<span class="sub">3 ليالٍ</span></div></div>
+        <div class="f"><div class="k">الرحلات</div><div class="v">كل جمعة<span class="sub">وكل اثنين</span></div></div>
+        <div class="f"><div class="k">الفنادق</div><div class="v">4 و5 نجوم<span class="sub">10 خيارات</span></div></div>
+      </div>
+    </div>
+    <div class="stubx">
+      <div class="k">تفاصيل الرحلة</div>
+      <ul><li>النجف – كيش</li><li>4 أو 5 أو 8 أيام</li><li>فنادق 4 و5 نجوم</li><li>السعر للشخص</li></ul>
+    </div>
+  </div>
+  <div class="stripes"><i></i><i></i></div>
+</div>
+<script>
+document.fonts.ready.then(()=>{const t=document.getElementById('tag'),l=document.getElementById('lockup');
+ t.style.transform='none'; let ws=0; for(let i=0;i<60;i++){const d=l.getBoundingClientRect().width-t.getBoundingClientRect().width; if(Math.abs(d)<0.5)break; ws+=d/5*0.9; t.style.wordSpacing=ws+'px';}
+ document.body.dataset.ready='1'});
+</script>
+</body>
+</html>
